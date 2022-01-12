@@ -6,7 +6,7 @@ public class DeplacementPersonnage : MonoBehaviour
 {
     public Rigidbody rigidbodyPerso;
     public GameObject camera3emePersonne;
-    public GameObject lamaInventaire;
+    public GameObject main;
     float vitesseDeplacement; 
     public float hauteurSaut; 
     public float ajoutGravite; 
@@ -76,10 +76,11 @@ public class DeplacementPersonnage : MonoBehaviour
     }
 
     void OnTriggerStay(Collider infoCollision){
-        if(infoCollision.gameObject.tag == "lama" && Input.GetKey("e")){
+        if((infoCollision.gameObject.tag == "lama" || infoCollision.gameObject.tag == "cheval" ||
+        infoCollision.gameObject.tag == "chien" || infoCollision.gameObject.tag == "mouton" ||
+        infoCollision.gameObject.tag == "vache") && Input.GetKey("e")){
             GetComponent<Animator>().SetBool("animaux", true);
-            infoCollision.gameObject.SetActive(false);
-            lamaInventaire.SetActive(true);
+            infoCollision.transform.parent = main.transform;
         }
     }
 }
