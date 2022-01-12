@@ -350,6 +350,10 @@ PrefabInstance:
       propertyPath: camera3emePersonne
       value: 
       objectReference: {fileID: 7061967782642060752}
+    - target: {fileID: 7673289614637025174, guid: 0eedd143fb9232a43b8ca5b77c3b32a4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7924005765682809278, guid: 0eedd143fb9232a43b8ca5b77c3b32a4, type: 3}
       propertyPath: m_RootOrder
       value: 0

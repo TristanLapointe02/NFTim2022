@@ -72,7 +72,8 @@ public class TirRoche : MonoBehaviourPunCallbacks
     }
     void NouvelleRoche()
     {
-        GameObject nouvelleRoche = Instantiate(rocheATiree, rocheATiree.transform.position, rocheATiree.transform.rotation);
+        GameObject nouvelleRoche = PhotonNetwork.Instantiate(rocheATiree.name, rocheATiree.transform.position, rocheATiree.transform.rotation, 0, null);
+        Physics.IgnoreCollision(nouvelleRoche.GetComponent<Collider>(), personnage.GetComponent<Collider>());
         nouvelleRoche.SetActive(true);
         nouvelleRoche.GetComponent<Rigidbody>().velocity = nouvelleRoche.transform.forward * vitesseRoche;
         nouvelleRoche.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None; 
