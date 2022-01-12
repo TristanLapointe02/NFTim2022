@@ -20,6 +20,12 @@ public class DeplacementPersonnage : MonoBehaviourPunCallbacks
     void Start()
     {
         rigidbodyPerso = GetComponent<Rigidbody>();
+
+        //Activer la caméra localement
+        if (photonView.IsMine)
+        {
+            camera3emePersonne.SetActive(true);
+        }
     }
 
     void Update()

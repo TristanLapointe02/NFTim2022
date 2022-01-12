@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7246957683855872345
 Transform:
   m_ObjectHideFlags: 0
@@ -134,10 +134,7 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   observableSearch: 2
-  ObservedComponents:
-  - {fileID: 3435041787382638179}
-  - {fileID: 4241645443020215415}
-  - {fileID: 7663856494568033466}
+  ObservedComponents: []
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -311,7 +308,10 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   observableSearch: 2
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 3435041787382638179}
+  - {fileID: 4241645443020215415}
+  - {fileID: 7663856494568033466}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -338,6 +338,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7246957684462599601}
     m_Modifications:
+    - target: {fileID: 5849999468634258469, guid: d5cce89627ae4b8429569fd20fa5e532, type: 3}
+      propertyPath: cameraJoueur
+      value: 
+      objectReference: {fileID: 7246957683855872348}
     - target: {fileID: 5849999468634258469, guid: d5cce89627ae4b8429569fd20fa5e532, type: 3}
       propertyPath: camera3emePersonne
       value: 
