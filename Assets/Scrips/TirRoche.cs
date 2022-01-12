@@ -24,6 +24,10 @@ public class TirRoche : MonoBehaviour
 
     void Update()
     {
+        if(peutTirer == true){
+            roche.SetActive(true);
+        }
+
         if(Input.GetKeyUp(KeyCode.Mouse0) && peutTirer){
             Tir();
             GetComponent<Animator>().SetBool("lancer", true);
