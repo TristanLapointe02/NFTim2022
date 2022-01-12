@@ -27,15 +27,12 @@ public class TimerPartieMultiplayer : MonoBehaviourPunCallbacks
                 finPartie();
             }
         }
-    }
-    // Fonction appelé lorsqu'un joueur join la room
-    public override void OnJoinedRoom(){
-        if(PhotonNetwork.PlayerList.Length == 2){
+         if(PhotonNetwork.PlayerList.Length == 2){
             partieCommencer = true;
         }
-        print(PhotonNetwork.PlayerList.Length);
+       
     }
-
+   
     void finPartie(){
         print("Fin partie");
     }
