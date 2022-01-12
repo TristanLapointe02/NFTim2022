@@ -33,6 +33,7 @@ public class TimerPartieMultiplayer : MonoBehaviourPunCallbacks
         if(PhotonNetwork.PlayerList.Length == 2){
             partieCommencer = true;
         }
+        print(PhotonNetwork.PlayerList.Length);
     }
 
     void finPartie(){
