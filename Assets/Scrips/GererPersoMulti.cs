@@ -11,6 +11,8 @@ public class GererPersoMulti : MonoBehaviourPunCallbacks
     public Vector3[] positions; //Positions aléatoires où le joueur peut spawn
     public int positionTableau; //Position dans le tableau pigée au hasard quand on fait spawn le joueur
     public static GameObject joueurLocal;
+    public  GameObject quitterPanneau; 
+    bool ctrlActive; // est-ce que les commandes sont affichés
     // Start is called before the first frame update
     void Start()
     {
@@ -32,13 +34,18 @@ public class GererPersoMulti : MonoBehaviourPunCallbacks
     void Update()
     {
          //Permettre au joueur de quitter avec escape
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            //Dire � tous les joueur qu'il est d�connect�
-            // photonView.RPC("AfficherTexteDeco", RpcTarget.Others, GestionConnexionSallePrive.NomJoueurStatic);
-
-            //Quitter la salle du serveur
-            PhotonNetwork.LeaveRoom();
+        if(Input.GetKeyDown(KeyCode.Escape) && ctrlActive == false){
+            ctrlActive = true;
+            quitterPanneau.SetActive(true); // ouvrir menu
         }
+        else if(Input.GetKeyDown(KeyCode.Escape) && ctrlActive == true){
+            ctrlActive = false;
+           quitterPanneau.SetActive(false); // fermer menu
+        }
+    }
+
+    public void Quitter(){
+       //Fermer l'appli
+        Application.Quit();
     }
 }
