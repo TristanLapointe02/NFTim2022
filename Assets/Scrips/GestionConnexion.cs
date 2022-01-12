@@ -137,7 +137,7 @@ public class GestionConnexion : MonoBehaviourPunCallbacks
     public override void OnJoinedRoom()
     {
         //Storer le texte d'attente dans la variable afin de l'afficher
-        TexteAttente.text = "Vos amis vont se connecter d'ici peu...";
+        TexteAttente.text = "Ton ami va se connecter d'ici peu...";
 
         //Désactiver l'interface du Lobby
         InterfaceLobby.SetActive(false);
