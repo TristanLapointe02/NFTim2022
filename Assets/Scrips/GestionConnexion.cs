@@ -12,6 +12,7 @@ public class GestionConnexion : MonoBehaviourPunCallbacks
     public GameObject ConnexionServeur; //Interface de connexion (premier écran)
     public GameObject InterfaceLobby; //Interface du lobby avec créer et joindre
     public GameObject SalleAttente; //Interface de la salle d'attente où on peut choisir son personnage
+    public GameObject Instructions; //Interface d'instructions
     public TextMeshProUGUI ChampNomJoueurTexte; //Champ de texte pour le nom du joueur
     public TextMeshProUGUI InformationDebug; //Texte situé en bas à gauche de l'écran permettant de savoir la situation de debugage
     public TextMeshProUGUI ChampCreerPartie; //Champ de texte du nom de la partie lors de la création
@@ -25,6 +26,8 @@ public class GestionConnexion : MonoBehaviourPunCallbacks
     RoomOptions roomOptions = new RoomOptions(); //Options de la salle
     public GameObject modeleJoseph; //Modèle de Joseph dans la scène d'accueil
     public GameObject modeleEdgar; //Modèle de Edgar dans la scène d'accueil
+    public bool ouvrirInstructions; //Variable qui vérifie si les instructions sont ouvertes.
+    
 
     // Start is called before the first frame update
     void Start()
@@ -61,6 +64,7 @@ public class GestionConnexion : MonoBehaviourPunCallbacks
         {
             PhotonNetwork.ConnectUsingSettings();
             PhotonNetwork.AutomaticallySyncScene = true;
+            Instructions.gameObject.SetActive(false);
         }
         else
         {
@@ -188,5 +192,27 @@ public class GestionConnexion : MonoBehaviourPunCallbacks
     {
         //Le sortir de la salle
         PhotonNetwork.LeaveRoom();
+    }
+
+    //Instructions
+    public void AfficherInstructions()
+    {
+        if(ouvrirInstructions == false)
+        {
+            Instructions.gameObject.SetActive(true);
+            ouvrirInstructions = true;
+        }
+        else
+        {
+            Instructions.gameObject.SetActive(false);
+            ouvrirInstructions = false;
+        }
+        
+    }
+    //Quitter la partie
+    public void QuitterPartie()
+    {
+        //Fermer l'appli
+        Application.Quit();
     }
 }
