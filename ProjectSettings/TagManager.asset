@@ -10,6 +10,7 @@ TagManager:
   - chien
   - cheval
   - lama
+  - destination
   layers:
   - Default
   - TransparentFX
