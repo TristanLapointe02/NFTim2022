@@ -8,25 +8,23 @@ using UnityEngine.SceneManagement;
 
 public class GererPersoMulti : MonoBehaviourPunCallbacks
 {
+    public Vector3[] positions; //Positions aléatoires où le joueur peut spawn
+    public int positionTableau; //Position dans le tableau pigée au hasard quand on fait spawn le joueur
     public static GameObject joueurLocal;
-    public GameObject posJoueur1;
-    public GameObject posJoueur2;
     // Start is called before the first frame update
     void Start()
     {
+        //Choisir une valeur aléatoire de position de spawn du personnage
+        positionTableau = Random.Range(0, 12);
          //INSTANCIER Edgar
-        if (GestionConnexion.PersonnageChoisi == "Edgar" && PhotonNetwork.LocalPlayer.IsMasterClient ==true)
+        if (GestionConnexion.PersonnageChoisi == "Edgar")
         {
-            joueurLocal = PhotonNetwork.Instantiate("Edgar", posJoueur1.transform.position, Quaternion.identity, 0, null);
-        }else{
-            joueurLocal = PhotonNetwork.Instantiate("Edgar", posJoueur2.transform.position, Quaternion.identity, 0, null);
+            joueurLocal = PhotonNetwork.Instantiate("Edgar", positions[positionTableau], Quaternion.identity, 0, null);
         }
         //INSTANCIER Joseph
-        if (GestionConnexion.PersonnageChoisi == "Joseph" && PhotonNetwork.LocalPlayer.IsMasterClient ==true)
+        if (GestionConnexion.PersonnageChoisi == "Joseph")
         {
-            joueurLocal = PhotonNetwork.Instantiate("Joseph", posJoueur1.transform.position, Quaternion.identity, 0, null);
-        }else{
-            joueurLocal = PhotonNetwork.Instantiate("Joseph", posJoueur2.transform.position, Quaternion.identity, 0, null);
+            joueurLocal = PhotonNetwork.Instantiate("Joseph", positions[positionTableau], Quaternion.identity, 0, null);
         }
     }
 
