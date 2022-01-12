@@ -2203,7 +2203,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "D\xE9marrer"
+  m_text: Commencer
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4437594451f391247b5700c613e9e3da, type: 2}
   m_sharedMaterial: {fileID: -8504292830806091539, guid: 4437594451f391247b5700c613e9e3da, type: 2}

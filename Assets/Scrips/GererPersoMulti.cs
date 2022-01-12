@@ -15,16 +15,16 @@ public class GererPersoMulti : MonoBehaviourPunCallbacks
     void Start()
     {
         //Choisir une valeur aléatoire de position de spawn du personnage
-        positionTableau = Random.Range(0, 12);
+        positionTableau = Random.Range(0, 7);
          //INSTANCIER Edgar
         if (GestionConnexion.PersonnageChoisi == "Edgar")
         {
-            joueurLocal = PhotonNetwork.Instantiate("Edgar", positions[positionTableau], Quaternion.identity, 0, null);
+            joueurLocal = PhotonNetwork.Instantiate("ParentEdgard", positions[positionTableau], Quaternion.identity, 0, null);
         }
         //INSTANCIER Joseph
         if (GestionConnexion.PersonnageChoisi == "Joseph")
         {
-            joueurLocal = PhotonNetwork.Instantiate("Joseph", positions[positionTableau], Quaternion.identity, 0, null);
+            joueurLocal = PhotonNetwork.Instantiate("ParentJoseph", positions[positionTableau], Quaternion.identity, 0, null);
         }
     }
 

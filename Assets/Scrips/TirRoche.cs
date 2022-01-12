@@ -7,10 +7,10 @@ public class TirRoche : MonoBehaviour
 {
     public AudioSource audioCam;
     public AudioClip sonLancer;
-    public GameObject roche; 
-    public GameObject personnage; 
+    public GameObject roche;
+    public GameObject personnage;
     public GameObject rocheATiree;
-    public Image rocheEnCooldown;
+    public GameObject rocheEnCooldown;
     public float cooldownRoche;
     bool enCooldowm = false;
     public float vitesseRoche;
@@ -19,7 +19,8 @@ public class TirRoche : MonoBehaviour
     void Start()
     {
         peutTirer = true;
-        rocheEnCooldown.fillAmount = 0;
+        rocheEnCooldown = GameObject.Find("rocheCooldown");
+        rocheEnCooldown.gameObject.GetComponent<Image>().fillAmount = 0;
     }
 
     void Update()
@@ -32,16 +33,16 @@ public class TirRoche : MonoBehaviour
             Tir();
             GetComponent<Animator>().SetBool("lancer", true);
             enCooldowm = true;
-            rocheEnCooldown.fillAmount = 1;
+            rocheEnCooldown.gameObject.GetComponent<Image>().fillAmount = 1;
             Invoke("RamenerLancer", 1.3f);
             Invoke("SonLancer", 0.3f);
         }
         Physics.IgnoreCollision(rocheATiree.GetComponent<Collider>(), personnage.GetComponent<Collider>());
 
         if(enCooldowm){
-            rocheEnCooldown.fillAmount -= 1 / cooldownRoche * Time.deltaTime;
-            if(rocheEnCooldown.fillAmount <= 0){
-                rocheEnCooldown.fillAmount = 0;
+            rocheEnCooldown.gameObject.GetComponent<Image>().fillAmount -= 1 / cooldownRoche * Time.deltaTime;
+            if(rocheEnCooldown.gameObject.GetComponent<Image>().fillAmount <= 0){
+                rocheEnCooldown.gameObject.GetComponent<Image>().fillAmount = 0;
                 enCooldowm = false;
             }
         }
