@@ -24,14 +24,7 @@ public class RotationCam : MonoBehaviour
 
         transform.localEulerAngles = new Vector3(Mathf.Clamp(transform.localEulerAngles.x, 10, 50), transform.localEulerAngles.y, 0);
 
-        if (Physics.Raycast(positionRayCastCamera.transform.position, positionRayCastCamera.transform.forward, -distanceCameraLoin))
-        {
-            camera3emePersonne.transform.localPosition = new Vector3(0, 1, distanceCameraPret);
-        }
-        else
-        {
             camera3emePersonne.transform.localPosition = new Vector3(0, 0, distanceCameraLoin);
-        }
 
     }
 }

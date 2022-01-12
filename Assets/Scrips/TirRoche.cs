@@ -7,16 +7,19 @@ public class TirRoche : MonoBehaviour
 {
     public AudioSource audioCam;
     public AudioClip sonLancer;
-    public Slider cooldownRoche;
     public GameObject roche; 
     public GameObject personnage; 
     public GameObject rocheATiree;
+    public Image rocheEnCooldown;
+    public float cooldownRoche;
+    bool enCooldowm = false;
     public float vitesseRoche;
     private bool peutTirer; 
 
     void Start()
     {
         peutTirer = true;
+        rocheEnCooldown.fillAmount = 0;
     }
 
     void Update()
@@ -24,16 +27,20 @@ public class TirRoche : MonoBehaviour
         if(Input.GetKeyUp(KeyCode.Mouse0) && peutTirer){
             Tir();
             GetComponent<Animator>().SetBool("lancer", true);
+            enCooldowm = true;
+            rocheEnCooldown.fillAmount = 1;
             Invoke("RamenerLancer", 1.3f);
             Invoke("SonLancer", 0.3f);
-            cooldownRoche.value = 0;
         }
         Physics.IgnoreCollision(rocheATiree.GetComponent<Collider>(), personnage.GetComponent<Collider>());
 
-        if(cooldownRoche.value == 0){
-            cooldownRoche.value += 1 * Time.deltaTime;
+        if(enCooldowm){
+            rocheEnCooldown.fillAmount -= 1 / cooldownRoche * Time.deltaTime;
+            if(rocheEnCooldown.fillAmount <= 0){
+                rocheEnCooldown.fillAmount = 0;
+                enCooldowm = false;
+            }
         }
-        
     }
     void Tir(){
         peutTirer = false;

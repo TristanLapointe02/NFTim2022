@@ -6,6 +6,7 @@ public class DeplacementPersonnage : MonoBehaviour
 {
     public Rigidbody rigidbodyPerso;
     public GameObject camera3emePersonne;
+    public GameObject lamaInventaire;
     float vitesseDeplacement; 
     public float hauteurSaut; 
     public float ajoutGravite; 
@@ -72,5 +73,13 @@ public class DeplacementPersonnage : MonoBehaviour
             GetComponent<Rigidbody>().AddRelativeForce(0f, ajoutGravite, 0f, ForceMode.VelocityChange);
         }
         forceDuSaut = 0f;
+    }
+
+    void OnTriggerStay(Collider infoCollision){
+        if(infoCollision.gameObject.tag == "lama" && Input.GetKey("e")){
+            GetComponent<Animator>().SetBool("animaux", true);
+            infoCollision.gameObject.SetActive(false);
+            lamaInventaire.SetActive(true);
+        }
     }
 }
