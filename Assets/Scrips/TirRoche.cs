@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Photon.Realtime;
+using Photon.Pun;
 
-public class TirRoche : MonoBehaviour
+public class TirRoche : MonoBehaviourPunCallbacks
 {
     public AudioSource audioCam;
     public AudioClip sonLancer;
@@ -18,32 +20,43 @@ public class TirRoche : MonoBehaviour
 
     void Start()
     {
-        peutTirer = true;
-        rocheEnCooldown = GameObject.Find("rocheCooldown");
-        rocheEnCooldown.gameObject.GetComponent<Image>().fillAmount = 0;
+        if (photonView.IsMine)
+        {
+            peutTirer = true;
+            rocheEnCooldown = GameObject.Find("rocheCooldown");
+            rocheEnCooldown.gameObject.GetComponent<Image>().fillAmount = 0;
+        }
+        
     }
 
     void Update()
     {
-        if(peutTirer == true){
-            roche.SetActive(true);
-        }
+        if (photonView.IsMine)
+        {
+            if (peutTirer == true)
+            {
+                roche.SetActive(true);
+            }
 
-        if(Input.GetKeyUp(KeyCode.Mouse0) && peutTirer){
-            Tir();
-            GetComponent<Animator>().SetBool("lancer", true);
-            enCooldowm = true;
-            rocheEnCooldown.gameObject.GetComponent<Image>().fillAmount = 1;
-            Invoke("RamenerLancer", 1.3f);
-            Invoke("SonLancer", 0.3f);
-        }
-        Physics.IgnoreCollision(rocheATiree.GetComponent<Collider>(), personnage.GetComponent<Collider>());
+            if (Input.GetKeyUp(KeyCode.Mouse0) && peutTirer)
+            {
+                Tir();
+                GetComponent<Animator>().SetBool("lancer", true);
+                enCooldowm = true;
+                rocheEnCooldown.gameObject.GetComponent<Image>().fillAmount = 1;
+                Invoke("RamenerLancer", 1.3f);
+                Invoke("SonLancer", 0.3f);
+            }
+            Physics.IgnoreCollision(rocheATiree.GetComponent<Collider>(), personnage.GetComponent<Collider>());
 
-        if(enCooldowm){
-            rocheEnCooldown.gameObject.GetComponent<Image>().fillAmount -= 1 / cooldownRoche * Time.deltaTime;
-            if(rocheEnCooldown.gameObject.GetComponent<Image>().fillAmount <= 0){
-                rocheEnCooldown.gameObject.GetComponent<Image>().fillAmount = 0;
-                enCooldowm = false;
+            if (enCooldowm)
+            {
+                rocheEnCooldown.gameObject.GetComponent<Image>().fillAmount -= 1 / cooldownRoche * Time.deltaTime;
+                if (rocheEnCooldown.gameObject.GetComponent<Image>().fillAmount <= 0)
+                {
+                    rocheEnCooldown.gameObject.GetComponent<Image>().fillAmount = 0;
+                    enCooldowm = false;
+                }
             }
         }
     }
