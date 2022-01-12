@@ -20,18 +20,22 @@ public class TimerPartieMultiplayer : MonoBehaviourPunCallbacks
     // Update is called once per frame
     void Update()
     {
-        // if(partieCommencer){
-        //     secondsSurvivedUI.text = Mathf.RoundToInt(Time.timeSinceLevelLoad).ToString();
-        //     if(timer < 0){
-        //         finPartie();
-        //         print("Fin partie");
-        //     }
-        // }
+        if(partieCommencer){
+            timer -= Time.deltaTime;
+            timerAvantFin.text = Mathf.RoundToInt(timer).ToString();
+            if(timer < 0){
+                finPartie();
+            }
+        }
     }
     // Fonction appelé lorsqu'un joueur join la room
     public override void OnJoinedRoom(){
         if(PhotonNetwork.PlayerList.Length == 2){
             partieCommencer = true;
         }
+    }
+
+    void finPartie(){
+        print("Fin partie");
     }
 }
