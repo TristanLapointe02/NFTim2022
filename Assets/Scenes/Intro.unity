@@ -1321,7 +1321,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1490304365}
         m_TargetAssemblyTypeName: GestionConnexion, Assembly-CSharp
-        m_MethodName: ConnexionLobby
+        m_MethodName: CommencerLaPartie
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
