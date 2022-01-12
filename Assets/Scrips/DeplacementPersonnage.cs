@@ -36,14 +36,14 @@ public class DeplacementPersonnage : MonoBehaviour
         }
 
             
-        if (vitesseDeplacement <= 15f && (Input.GetKey("w") || Input.GetKey("s")))
+        if (vitesseDeplacement <= 7f && (Input.GetKey("w") || Input.GetKey("s") || Input.GetKey("a") || Input.GetKey("d")))
         {
-            GetComponent<Animator>().SetBool("course", true);
             vitesseDeplacement += 0.08f;
+            GetComponent<Animator>().SetBool("course", true);
         }
-        else if (vitesseDeplacement >= 10 && (Input.GetKey("w") || Input.GetKey("s")))
+        else if (vitesseDeplacement >= 5 && (Input.GetKey("w") || Input.GetKey("s") || Input.GetKey("a") || Input.GetKey("d")))
         {
-            vitesseDeplacement = 15;
+            vitesseDeplacement = 7;
         }
         else
         {
@@ -66,6 +66,8 @@ public class DeplacementPersonnage : MonoBehaviour
     void FixedUpdate(){
         if(auSol) {
             GetComponent<Rigidbody>().AddRelativeForce(0f, forceDuSaut, 0f, ForceMode.VelocityChange);
+            rigidbodyPerso.drag = 5;
+            rigidbodyPerso.angularDrag = 5;
         }else{
             GetComponent<Rigidbody>().AddRelativeForce(0f, ajoutGravite, 0f, ForceMode.VelocityChange);
         }
