@@ -461,7 +461,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: b4b8ba2fabf88db4ab4bc47ca8293c03, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b4b8ba2fabf88db4ab4bc47ca8293c03, type: 3}
       propertyPath: m_LocalPosition.x
@@ -518,7 +518,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 89d1bf9a86a716345b24e11216ed8e65, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 89d1bf9a86a716345b24e11216ed8e65, type: 3}
       propertyPath: m_LocalPosition.x
@@ -575,7 +575,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: b001a20f0c6900c4e8e92fe6f9906edc, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b001a20f0c6900c4e8e92fe6f9906edc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -583,7 +583,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b001a20f0c6900c4e8e92fe6f9906edc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.943
+      value: 1.52
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b001a20f0c6900c4e8e92fe6f9906edc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -632,7 +632,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 8c025a21433201140829de48df4676d6, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8c025a21433201140829de48df4676d6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -689,7 +689,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1952411916808166810, guid: 88d31a07240a3e44987d4720f7eaa439, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1952411916808166810, guid: 88d31a07240a3e44987d4720f7eaa439, type: 3}
       propertyPath: m_LocalPosition.x
