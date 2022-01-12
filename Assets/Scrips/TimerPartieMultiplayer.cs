@@ -22,7 +22,7 @@ public class TimerPartieMultiplayer : MonoBehaviourPunCallbacks
     {
         if(partieCommencer){
             timer -= Time.deltaTime;
-            timerAvantFin.text = Mathf.RoundToInt(timer).ToString();
+            timerAvantFin.text = Mathf.RoundToInt(timer).ToString(); //modifie le texte en string
             if(timer < 0){
                 finPartie();
             }

@@ -13,6 +13,7 @@ public class DeplacementPersonnage : MonoBehaviour
     private float forceDuSaut; 
     private bool auSol; 
     public bool saut; 
+    private bool etourdi;
 
     void Start()
     {
@@ -25,16 +26,28 @@ public class DeplacementPersonnage : MonoBehaviour
         float vDeplacement = Input.GetAxisRaw("Vertical"); 
         Vector3 directionDep = camera3emePersonne.transform.forward * vDeplacement + camera3emePersonne.transform.right * hDeplacement;
         directionDep.y = 0;
-
-        if (directionDep != Vector3.zero) 
-        {
-            transform.forward = directionDep;
-            rigidbodyPerso.velocity = (transform.forward * vitesseDeplacement) + new Vector3(0, rigidbodyPerso.velocity.y, 0);
+        if(!etourdi){
+            if (directionDep != Vector3.zero) 
+            {
+                transform.forward = directionDep;
+                rigidbodyPerso.velocity = (transform.forward * vitesseDeplacement) + new Vector3(0, rigidbodyPerso.velocity.y, 0);
+            }
+            else
+            {
+                rigidbodyPerso.velocity = new Vector3(0, rigidbodyPerso.velocity.y, 0);
+            }
+        }else{
+             if (directionDep != Vector3.zero) 
+            {
+                transform.forward = directionDep;
+                rigidbodyPerso.velocity = (-transform.forward * vitesseDeplacement) + new Vector3(0, rigidbodyPerso.velocity.y, 0);
+            }
+            else
+            {
+                rigidbodyPerso.velocity = new Vector3(0, rigidbodyPerso.velocity.y, 0);
+            }
         }
-        else
-        {
-            rigidbodyPerso.velocity = new Vector3(0, rigidbodyPerso.velocity.y, 0);
-        }
+        
 
             
         if (vitesseDeplacement <= 7f && (Input.GetKey("w") || Input.GetKey("s") || Input.GetKey("a") || Input.GetKey("d")))

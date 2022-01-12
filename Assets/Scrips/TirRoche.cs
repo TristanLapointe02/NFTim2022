@@ -71,4 +71,10 @@ public class TirRoche : MonoBehaviour
     void SonLancer(){
         audioCam.PlayOneShot(sonLancer);
     }
+
+    private void OnTriggerEnter(Collider infoCollision) {
+        if(infoCollision.gameObject.tag == "joueur"){
+
+        }
+    }
 }
