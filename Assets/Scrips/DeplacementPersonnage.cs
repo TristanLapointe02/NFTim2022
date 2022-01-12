@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using Photon.Realtime;
 using Photon.Pun;
 
@@ -21,7 +22,7 @@ public class DeplacementPersonnage : MonoBehaviourPunCallbacks
     {
         rigidbodyPerso = GetComponent<Rigidbody>();
 
-        //Activer la caméra localement
+        //Activer la camï¿½ra localement
         if (photonView.IsMine)
         {
             camera3emePersonne.SetActive(true);
@@ -111,9 +112,11 @@ public class DeplacementPersonnage : MonoBehaviourPunCallbacks
     void OnTriggerStay(Collider infoCollision){
         if((infoCollision.gameObject.tag == "lama" || infoCollision.gameObject.tag == "cheval" ||
         infoCollision.gameObject.tag == "chien" || infoCollision.gameObject.tag == "mouton" ||
-        infoCollision.gameObject.tag == "vache") && Input.GetKey("e") && photonView.IsMine){
+        infoCollision.gameObject.tag == "vache" || infoCollision.gameObject.tag == "zebre" || 
+        infoCollision.gameObject.tag == "pug" || infoCollision.gameObject.tag == "cochon") && Input.GetKey("e") && photonView.IsMine){
             GetComponent<Animator>().SetBool("animaux", true);
             infoCollision.transform.parent = main.transform;
+            infoCollision.gameObject.GetComponent<NavMeshAgent>().isStopped = true;
         }
     }
 }

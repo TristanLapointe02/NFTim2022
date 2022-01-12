@@ -11,6 +11,10 @@ TagManager:
   - cheval
   - lama
   - destination
+  - cochon
+  - pug
+  - zebre
+  - waypoint
   layers:
   - Default
   - TransparentFX
