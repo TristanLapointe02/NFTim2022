@@ -5,36 +5,36 @@ using UnityEngine.UI;
 
 public class testPointsAndy : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider infoCollision)
+    private void OnTriggerEnter(Collider infoCollisionAnimaux)
     {
-        if (infoCollision.gameObject.tag == "vache")
+        if (infoCollisionAnimaux.gameObject.tag == "vache")
         {
             scoreManager.instance.pointsVache();
-            Destroy(infoCollision.gameObject);
+            Destroy(infoCollisionAnimaux.gameObject);
         }
 
-        else if (infoCollision.gameObject.tag == "mouton")
+        else if (infoCollisionAnimaux.gameObject.tag == "mouton")
         {
             scoreManager.instance.pointsMouton();
-            Destroy(infoCollision.gameObject);
+            Destroy(infoCollisionAnimaux.gameObject);
         }
 
-        else if (infoCollision.gameObject.tag == "chien")
+        else if (infoCollisionAnimaux.gameObject.tag == "chien")
         {
             scoreManager.instance.pointsChien();
-            Destroy(infoCollision.gameObject);
+            Destroy(infoCollisionAnimaux.gameObject);
         }
 
-        else if (infoCollision.gameObject.tag == "cheval")
+        else if (infoCollisionAnimaux.gameObject.tag == "cheval")
         {
             scoreManager.instance.pointsCheval();
-            Destroy(infoCollision.gameObject);
+            Destroy(infoCollisionAnimaux.gameObject);
         }
 
-        else if (infoCollision.gameObject.tag == "lama")
+        else if (infoCollisionAnimaux.gameObject.tag == "lama")
         {
             scoreManager.instance.pointsLama();
-            Destroy(infoCollision.gameObject);
+            Destroy(infoCollisionAnimaux.gameObject);
         }
     }
 }
