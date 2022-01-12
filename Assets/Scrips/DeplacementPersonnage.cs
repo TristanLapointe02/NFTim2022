@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Realtime;
+using Photon.Pun;
 
-public class DeplacementPersonnage : MonoBehaviour
+public class DeplacementPersonnage : MonoBehaviourPunCallbacks
 {
     public Rigidbody rigidbodyPerso;
     public GameObject camera3emePersonne;
@@ -22,76 +24,88 @@ public class DeplacementPersonnage : MonoBehaviour
 
     void Update()
     {
-        float hDeplacement = Input.GetAxisRaw("Horizontal"); 
-        float vDeplacement = Input.GetAxisRaw("Vertical"); 
-        Vector3 directionDep = camera3emePersonne.transform.forward * vDeplacement + camera3emePersonne.transform.right * hDeplacement;
-        directionDep.y = 0;
-        if(!etourdi){
-            if (directionDep != Vector3.zero) 
+        if (photonView.IsMine)
+        {
+            float hDeplacement = Input.GetAxisRaw("Horizontal");
+            float vDeplacement = Input.GetAxisRaw("Vertical");
+            Vector3 directionDep = camera3emePersonne.transform.forward * vDeplacement + camera3emePersonne.transform.right * hDeplacement;
+            directionDep.y = 0;
+            if (!etourdi)
             {
-                transform.forward = directionDep;
-                rigidbodyPerso.velocity = (transform.forward * vitesseDeplacement) + new Vector3(0, rigidbodyPerso.velocity.y, 0);
+                if (directionDep != Vector3.zero)
+                {
+                    transform.forward = directionDep;
+                    rigidbodyPerso.velocity = (transform.forward * vitesseDeplacement) + new Vector3(0, rigidbodyPerso.velocity.y, 0);
+                }
+                else
+                {
+                    rigidbodyPerso.velocity = new Vector3(0, rigidbodyPerso.velocity.y, 0);
+                }
             }
             else
             {
-                rigidbodyPerso.velocity = new Vector3(0, rigidbodyPerso.velocity.y, 0);
+                if (directionDep != Vector3.zero)
+                {
+                    transform.forward = directionDep;
+                    rigidbodyPerso.velocity = (-transform.forward * vitesseDeplacement) + new Vector3(0, rigidbodyPerso.velocity.y, 0);
+                }
+                else
+                {
+                    rigidbodyPerso.velocity = new Vector3(0, rigidbodyPerso.velocity.y, 0);
+                }
             }
-        }else{
-             if (directionDep != Vector3.zero) 
+
+
+
+            if (vitesseDeplacement <= 7f && (Input.GetKey("w") || Input.GetKey("s") || Input.GetKey("a") || Input.GetKey("d")))
             {
-                transform.forward = directionDep;
-                rigidbodyPerso.velocity = (-transform.forward * vitesseDeplacement) + new Vector3(0, rigidbodyPerso.velocity.y, 0);
+                vitesseDeplacement += 0.08f;
+                GetComponent<Animator>().SetBool("course", true);
+            }
+            else if (vitesseDeplacement >= 5 && (Input.GetKey("w") || Input.GetKey("s") || Input.GetKey("a") || Input.GetKey("d")))
+            {
+                vitesseDeplacement = 7;
             }
             else
             {
-                rigidbodyPerso.velocity = new Vector3(0, rigidbodyPerso.velocity.y, 0);
+                vitesseDeplacement = 0;
+                GetComponent<Animator>().SetBool("course", false);
             }
-        }
-        
 
-            
-        if (vitesseDeplacement <= 7f && (Input.GetKey("w") || Input.GetKey("s") || Input.GetKey("a") || Input.GetKey("d")))
-        {
-            vitesseDeplacement += 0.08f;
-            GetComponent<Animator>().SetBool("course", true);
-        }
-        else if (vitesseDeplacement >= 5 && (Input.GetKey("w") || Input.GetKey("s") || Input.GetKey("a") || Input.GetKey("d")))
-        {
-            vitesseDeplacement = 7;
-        }
-        else
-        {
-            vitesseDeplacement = 0;
-            GetComponent<Animator>().SetBool("course", false);
-        }
+            RaycastHit infoCollision;
+            auSol = Physics.SphereCast(transform.position + new Vector3(0f, 0.5f, 0f), 0.2f, -Vector3.up, out infoCollision, 0.8f);
 
-        RaycastHit infoCollision; 
-        auSol = Physics.SphereCast(transform.position + new Vector3(0f, 0.5f, 0f), 0.2f, -Vector3.up, out infoCollision, 0.8f);
+            GetComponent<Animator>().SetBool("sauter", !auSol);
 
-        GetComponent<Animator>().SetBool("sauter", !auSol);
-
-        if (Input.GetKeyDown(KeyCode.Space) && auSol)
-        {
-            forceDuSaut = hauteurSaut;
-            saut = true;
+            if (Input.GetKeyDown(KeyCode.Space) && auSol)
+            {
+                forceDuSaut = hauteurSaut;
+                saut = true;
+            }
         }
     }
 
     void FixedUpdate(){
-        if(auSol) {
-            GetComponent<Rigidbody>().AddRelativeForce(0f, forceDuSaut, 0f, ForceMode.VelocityChange);
-            rigidbodyPerso.drag = 5;
-            rigidbodyPerso.angularDrag = 5;
-        }else{
-            GetComponent<Rigidbody>().AddRelativeForce(0f, ajoutGravite, 0f, ForceMode.VelocityChange);
+        if (photonView.IsMine)
+        {
+            if (auSol)
+            {
+                GetComponent<Rigidbody>().AddRelativeForce(0f, forceDuSaut, 0f, ForceMode.VelocityChange);
+                rigidbodyPerso.drag = 5;
+                rigidbodyPerso.angularDrag = 5;
+            }
+            else
+            {
+                GetComponent<Rigidbody>().AddRelativeForce(0f, ajoutGravite, 0f, ForceMode.VelocityChange);
+            }
+            forceDuSaut = 0f;
         }
-        forceDuSaut = 0f;
     }
 
     void OnTriggerStay(Collider infoCollision){
         if((infoCollision.gameObject.tag == "lama" || infoCollision.gameObject.tag == "cheval" ||
         infoCollision.gameObject.tag == "chien" || infoCollision.gameObject.tag == "mouton" ||
-        infoCollision.gameObject.tag == "vache") && Input.GetKey("e")){
+        infoCollision.gameObject.tag == "vache") && Input.GetKey("e") && photonView.IsMine){
             GetComponent<Animator>().SetBool("animaux", true);
             infoCollision.transform.parent = main.transform;
         }
