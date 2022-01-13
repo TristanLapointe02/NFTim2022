@@ -152,12 +152,14 @@ public class DeplacementPersonnage : MonoBehaviourPunCallbacks
             GetComponent<Animator>().SetBool("animaux", true);
             infoCollision.gameObject.GetComponent<NavMeshAgent>().isStopped = true;
             onTientAnimal = true;
+            TirRoche.peutTirer = false;
 
         }
         if (onTientAnimal == true && infoCollision.gameObject.name == "CAGE1")
         {
             if (PhotonNetwork.LocalPlayer == PhotonNetwork.PlayerList[0])
             {
+                TirRoche.peutTirer = true;
                 print("etape1");
                 switch (animalPris)
                 {
@@ -175,6 +177,12 @@ public class DeplacementPersonnage : MonoBehaviourPunCallbacks
                         break;
                     case "lama":
                         photonView.RPC("AjoutScoreJoueur1", RpcTarget.All, 20);
+                        break;
+                    case "zebre":
+                        photonView.RPC("AjoutScoreJoueur1", RpcTarget.All, 25);
+                        break;
+                    case "cochon":
+                        photonView.RPC("AjoutScoreJoueur1", RpcTarget.All, 4);
                         break;
                     default:
                         break;

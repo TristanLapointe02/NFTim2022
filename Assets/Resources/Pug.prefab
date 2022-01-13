@@ -607,8 +607,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.24742097, y: 0.4690881, z: 0.68047005}
-  m_Center: {x: 0.012036209, y: 0.29323557, z: 0.05823353}
+  m_Size: {x: 0.24742097, y: 0.5358731, z: 0.68047005}
+  m_Center: {x: 0.012036209, y: 0.25984305, z: 0.05823353}
 --- !u!95 &4403195902609611608
 Animator:
   serializedVersion: 3
@@ -655,7 +655,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 2
+  m_Speed: 4
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -663,7 +663,7 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2
+  m_Height: 0.5
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4

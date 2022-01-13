@@ -17,7 +17,7 @@ public class TirRoche : MonoBehaviourPunCallbacks
     public float cooldownRoche;
     bool enCooldowm = false;
     public float vitesseRoche;
-    private bool peutTirer; 
+    public static bool peutTirer; 
 
     void Start()
     {

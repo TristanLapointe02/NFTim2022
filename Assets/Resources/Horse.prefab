@@ -280,7 +280,7 @@ Transform:
   m_GameObject: {fileID: 1431742103798923602}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.164, y: 1.366, z: -31.156101}
-  m_LocalScale: {x: 0.28838, y: 0.28838, z: 0.28838}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
   m_Children:
   - {fileID: 7216336868843735926}
   - {fileID: 5339475824714191454}
@@ -314,8 +314,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.58591294, y: 1.317399, z: 1.7823132}
-  m_Center: {x: 0.00643502, y: 0.7446697, z: 0.11480477}
+  m_Size: {x: 0.58591294, y: 1.4123129, z: 1.7823132}
+  m_Center: {x: 0.006435017, y: 0.6972129, z: 0.114804745}
 --- !u!95 &2242783863294208643
 Animator:
   serializedVersion: 3
@@ -362,7 +362,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 2
+  m_Speed: 4
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -370,7 +370,7 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2
+  m_Height: 1.4
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
