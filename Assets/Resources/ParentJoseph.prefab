@@ -4968,7 +4968,7 @@ MonoBehaviour:
   personnage: {fileID: 7980466062402017112}
   camera3emePersonne: {fileID: 7061967782642060752}
   positionRayCastCamera: {fileID: 7061967782574211685}
-  hauteurPivot: 0.5
+  hauteurPivot: 1
   distanceCameraLoin: -1.2
   distanceCameraPret: -1.2
   vitesseCameraX: 5
