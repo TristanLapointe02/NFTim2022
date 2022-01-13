@@ -164,7 +164,7 @@ public class DeplacementPersonnage : MonoBehaviourPunCallbacks
         }
         else if (photonView.IsMine && onTientAnimal == true && Input.GetKey("e") && infoCollision.gameObject.name == "CAGE2")
         {
-
+            
         }
     }
 }
