@@ -153,100 +153,14 @@ public class DeplacementPersonnage : MonoBehaviourPunCallbacks
 
         }
         if (onTientAnimal == true && infoCollision.gameObject.name == "CAGE1")
-        {/*
-            if (PhotonNetwork.LocalPlayer == PhotonNetwork.PlayerList[0])
-            {
-                TirRoche.peutTirer = true;
-                print("etape1");
-                switch (animalPris)
-                {
-                    case "vache":
-                        photonView.RPC("AjoutScoreJoueur1", RpcTarget.All, 3);
-                        break;
-                    case "mouton":
-                        photonView.RPC("AjoutScoreJoueur1", RpcTarget.All, 5);
-                        break;
-                    case "chien":
-                        photonView.RPC("AjoutScoreJoueur1", RpcTarget.All, 10);
-                        break;
-                    case "cheval":
-                        photonView.RPC("AjoutScoreJoueur1", RpcTarget.All, 15);
-                        break;
-                    case "lama":
-                        photonView.RPC("AjoutScoreJoueur1", RpcTarget.All, 20);
-                        break;
-                    case "zebre":
-                        photonView.RPC("AjoutScoreJoueur1", RpcTarget.All, 25);
-                        break;
-                    case "cochon":
-                        photonView.RPC("AjoutScoreJoueur1", RpcTarget.All, 4);
-                        break;
-                    default:
-                        break;
-                }
-            }*/
+        {
+            TirRoche.peutTirer = true;
+            
             if (photonView.IsMine)
             {
                 GetComponent<Animator>().SetBool("animaux", false);
             } 
             onTientAnimal = false;
         }
-
-        /*if (infoCollision.gameObject.layer == 6)
-        {
-            print("tag de l'animal" + animalPris);
-            animalPris = infoCollision.gameObject.tag.ToString();
-        }*/
-
-        /*if (onTientAnimal == true && Input.GetKeyDown("e") && infoCollision.gameObject.name == "CAGE2")
-        {
-            if (PhotonNetwork.LocalPlayer == PhotonNetwork.PlayerList[1])
-            {
-                print("etape1");
-                switch (animalPris)
-                {
-                    case "vache":
-                        photonView.RPC("AjoutScoreJoueur2", RpcTarget.All, 3);
-                        break;
-                    case "mouton":
-                        photonView.RPC("AjoutScoreJoueur2", RpcTarget.All, 5);
-                        break;
-                    case "chien":
-                        photonView.RPC("AjoutScoreJoueur2", RpcTarget.All, 10);
-                        print("etape2");
-                        break;
-                    case "cheval":
-                        photonView.RPC("AjoutScoreJoueur2", RpcTarget.All, 15);
-                        break;
-                    case "lama":
-                        photonView.RPC("AjoutScoreJoueur2", RpcTarget.All, 20);
-                        break;
-                    default:
-                        break;
-                }
-
-            }
-            if (photonView.IsMine)
-            {
-                GetComponent<Animator>().SetBool("animaux", false);
-            }
-            onTientAnimal = false;
-        }*/
     }
-    
-    /*[PunRPC]
-    public void AjoutScoreJoueur1(int score)
-    {
-        print("ajout score joueur 1");
-        pointage1 += score;
-        score1.text = PhotonNetwork.PlayerList[0].NickName + " " + pointage1.ToString();
-    }
-
-    [PunRPC]
-    public void AjoutScoreJoueur2(int score)
-    {
-        print("ajout score joueur 2");
-        pointage2 += score;
-        score2.text = PhotonNetwork.PlayerList[1].NickName + " " + pointage2.ToString();
-    }*/
 }

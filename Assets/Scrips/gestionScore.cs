@@ -10,6 +10,7 @@ public class gestionScore : MonoBehaviourPunCallbacks
     public static int pointage1 = 0;
     public Text score2;
     public static int pointage2 = 0;
+    public AudioClip sonScore;
 
     // Start is called before the first frame update
     void Start()
@@ -111,6 +112,7 @@ public class gestionScore : MonoBehaviourPunCallbacks
     {
         print("ajout score joueur 1");
         pointage1 += score;
+        GetComponent<AudioSource>().PlayOneShot(sonScore);
     }
 
     [PunRPC]
@@ -118,5 +120,6 @@ public class gestionScore : MonoBehaviourPunCallbacks
     {
         print("ajout score joueur 2");
         pointage2 += score;
+        GetComponent<AudioSource>().PlayOneShot(sonScore);
     }
 }
