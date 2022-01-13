@@ -556,6 +556,7 @@ GameObject:
   - component: {fileID: 4173582873479408619}
   - component: {fileID: -8368701461654155206}
   - component: {fileID: -4975116915585586252}
+  - component: {fileID: -43341308170799255}
   m_Layer: 0
   m_Name: Pug
   m_TagString: pug
@@ -682,7 +683,7 @@ MonoBehaviour:
   Group: 0
   prefixField: -1
   Synchronization: 3
-  OwnershipTransfer: 0
+  OwnershipTransfer: 1
   observableSearch: 2
   ObservedComponents:
   - {fileID: -8368701461654155206}
@@ -739,6 +740,19 @@ MonoBehaviour:
   m_SynchronizeAngularVelocity: 1
   m_TeleportEnabled: 0
   m_TeleportIfDistanceGreaterThan: 3
+--- !u!114 &-43341308170799255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3592221628556933058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bad68582102661e4aa8e0dab094cb014, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  joueurAvecAnimal: {fileID: 0}
 --- !u!1 &3615567138917054929
 GameObject:
   m_ObjectHideFlags: 0

@@ -263,6 +263,7 @@ GameObject:
   - component: {fileID: 888778972862769747}
   - component: {fileID: 7934791318631231488}
   - component: {fileID: 3152568016134802262}
+  - component: {fileID: 8306420905646702696}
   m_Layer: 0
   m_Name: Horse
   m_TagString: cheval
@@ -389,7 +390,7 @@ MonoBehaviour:
   Group: 0
   prefixField: -1
   Synchronization: 3
-  OwnershipTransfer: 0
+  OwnershipTransfer: 1
   observableSearch: 2
   ObservedComponents:
   - {fileID: 7934791318631231488}
@@ -446,6 +447,19 @@ MonoBehaviour:
   m_SynchronizeAngularVelocity: 1
   m_TeleportEnabled: 0
   m_TeleportIfDistanceGreaterThan: 3
+--- !u!114 &8306420905646702696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1431742103798923602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bad68582102661e4aa8e0dab094cb014, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  joueurAvecAnimal: {fileID: 0}
 --- !u!1 &1537019357087139038
 GameObject:
   m_ObjectHideFlags: 0

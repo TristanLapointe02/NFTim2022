@@ -1114,6 +1114,7 @@ GameObject:
   - component: {fileID: -7836886621341052141}
   - component: {fileID: -4902373799120777652}
   - component: {fileID: 8680104826741547228}
+  - component: {fileID: -5386488152166712832}
   m_Layer: 0
   m_Name: Sheep
   m_TagString: mouton
@@ -1240,7 +1241,7 @@ MonoBehaviour:
   Group: 0
   prefixField: -1
   Synchronization: 3
-  OwnershipTransfer: 0
+  OwnershipTransfer: 1
   observableSearch: 2
   ObservedComponents:
   - {fileID: -4902373799120777652}
@@ -1297,6 +1298,19 @@ MonoBehaviour:
   m_SynchronizeAngularVelocity: 1
   m_TeleportEnabled: 0
   m_TeleportIfDistanceGreaterThan: 3
+--- !u!114 &-5386488152166712832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8730486240728694106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bad68582102661e4aa8e0dab094cb014, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  joueurAvecAnimal: {fileID: 0}
 --- !u!1 &8854036576778597193
 GameObject:
   m_ObjectHideFlags: 0

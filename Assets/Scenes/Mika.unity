@@ -1016,6 +1016,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pig
       objectReference: {fileID: 0}
+    - target: {fileID: 3141258461190023576, guid: 1ad55e63fb5015844ac4eff5728c9b97, type: 3}
+      propertyPath: sceneViewId
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ad55e63fb5015844ac4eff5728c9b97, type: 3}
 --- !u!1001 &2242783861754654459
@@ -1025,6 +1029,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 888778972862769747, guid: ad8b38580cd6899449d0a5b5caded936, type: 3}
+      propertyPath: sceneViewId
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 1431742103798923602, guid: ad8b38580cd6899449d0a5b5caded936, type: 3}
       propertyPath: m_Name
       value: Horse
@@ -1090,6 +1098,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6105687571712754911, guid: 792009c89a61b2840ab86f494ac3cf79, type: 3}
+      propertyPath: sceneViewId
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3722466409815991868, guid: 792009c89a61b2840ab86f494ac3cf79, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -1159,6 +1171,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pug
       objectReference: {fileID: 0}
+    - target: {fileID: 4173582873479408619, guid: d0bca0ddbbd42c241a31af0ec667bf09, type: 3}
+      propertyPath: sceneViewId
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4220420568533183864, guid: d0bca0ddbbd42c241a31af0ec667bf09, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -1220,6 +1236,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6732106042355658956, guid: b3f87a37c65100e4180b78de886d838a, type: 3}
+      propertyPath: sceneViewId
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5907354456684855528, guid: b3f87a37c65100e4180b78de886d838a, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -1362,6 +1382,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -4843945474523292967, guid: 2272ec94e6bd81a49b854a9679de18ce, type: 3}
+      propertyPath: sceneViewId
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 7090281413571273875, guid: 2272ec94e6bd81a49b854a9679de18ce, type: 3}
       propertyPath: MesDestinations.Array.data[0]
       value: 
@@ -1500,6 +1524,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7836886621341052141, guid: 49ed7d5464b6a1747ad3b216fcf1422b, type: 3}
+      propertyPath: sceneViewId
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8242495885362194400, guid: 49ed7d5464b6a1747ad3b216fcf1422b, type: 3}
       propertyPath: m_RootOrder
       value: 14

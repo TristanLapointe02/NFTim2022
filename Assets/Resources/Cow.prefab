@@ -1156,6 +1156,7 @@ GameObject:
   - component: {fileID: 8924088378117315039}
   - component: {fileID: -4509703368088562240}
   - component: {fileID: -462208111267802789}
+  - component: {fileID: 7007052100438852464}
   m_Layer: 0
   m_Name: Cow
   m_TagString: vache
@@ -1281,7 +1282,7 @@ MonoBehaviour:
   Group: 0
   prefixField: -1
   Synchronization: 3
-  OwnershipTransfer: 0
+  OwnershipTransfer: 1
   observableSearch: 2
   ObservedComponents:
   - {fileID: 8924088378117315039}
@@ -1357,6 +1358,19 @@ MonoBehaviour:
   m_SynchronizeLayers:
   - SynchronizeType: 0
     LayerIndex: 0
+--- !u!114 &7007052100438852464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7972731094958678889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bad68582102661e4aa8e0dab094cb014, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  joueurAvecAnimal: {fileID: 0}
 --- !u!1 &7986801508683590637
 GameObject:
   m_ObjectHideFlags: 0

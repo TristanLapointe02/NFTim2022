@@ -870,6 +870,7 @@ GameObject:
   - component: {fileID: -6732106042355658956}
   - component: {fileID: -5501980261841049657}
   - component: {fileID: -836908448646298075}
+  - component: {fileID: -7688967798296329628}
   m_Layer: 0
   m_Name: Llama
   m_TagString: lama
@@ -996,7 +997,7 @@ MonoBehaviour:
   Group: 0
   prefixField: -1
   Synchronization: 3
-  OwnershipTransfer: 0
+  OwnershipTransfer: 1
   observableSearch: 2
   ObservedComponents:
   - {fileID: -5501980261841049657}
@@ -1053,6 +1054,19 @@ MonoBehaviour:
   m_SynchronizeAngularVelocity: 1
   m_TeleportEnabled: 0
   m_TeleportIfDistanceGreaterThan: 3
+--- !u!114 &-7688967798296329628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6534990485112871506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bad68582102661e4aa8e0dab094cb014, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  joueurAvecAnimal: {fileID: 0}
 --- !u!1 &6645892572265193438
 GameObject:
   m_ObjectHideFlags: 0
