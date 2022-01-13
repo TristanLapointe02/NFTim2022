@@ -164,7 +164,7 @@ public class DeplacementPersonnage : MonoBehaviourPunCallbacks
             if (PhotonNetwork.LocalPlayer == PhotonNetwork.PlayerList[0])
             {
                 print("etape1");
-                switch (testPointsAndy.animalPris)
+                switch (animalPris)
                 {
                     case "vache":
                         photonView.RPC("AjoutScoreJoueur1", RpcTarget.AllBuffered, 3);
@@ -197,7 +197,7 @@ public class DeplacementPersonnage : MonoBehaviourPunCallbacks
             if (PhotonNetwork.LocalPlayer == PhotonNetwork.PlayerList[1])
             {
                 print("etape1");
-                switch (testPointsAndy.animalPris)
+                switch (animalPris)
                 {
                     case "vache":
                         photonView.RPC("AjoutScoreJoueur2", RpcTarget.AllBuffered, 3);
