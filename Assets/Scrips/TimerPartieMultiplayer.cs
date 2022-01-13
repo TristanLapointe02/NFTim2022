@@ -20,7 +20,8 @@ public class TimerPartieMultiplayer : MonoBehaviourPunCallbacks
             timer -= Time.deltaTime;
             timerAvantFin.text = Mathf.RoundToInt(timer).ToString(); //modifie le texte en string
             if(timer <= 0f){
-                //PhotonNetwork.LoadLevel("Fin");
+                PhotonNetwork.LeaveRoom();
+                PhotonNetwork.LoadLevel("Fin");
                 SceneManager.LoadScene("Fin");
                 partieCommencer = false;
             }
