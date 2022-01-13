@@ -158,28 +158,26 @@ public class DeplacementPersonnage : MonoBehaviourPunCallbacks
             if(PhotonNetwork.LocalPlayer == PhotonNetwork.PlayerList[0])
             {
                 print("etape1");
-                photonView.RPC("AjoutScore", RpcTarget.All, 10);
-                /*switch (testPointsAndy.animalPris)
+                switch (testPointsAndy.animalPris)
                 {
                     case "vache":
-                        pointage1 += 3;
+                        photonView.RPC("AjoutScoreJoueur1", RpcTarget.All, 3);
                         break;
                     case "mouton":
-                        pointage1 += 5;
+                        photonView.RPC("AjoutScoreJoueur1", RpcTarget.All, 5);
                         break;
                     case "chien":
-                        pointage1 += 10;
-                        print("etape2");
+                        photonView.RPC("AjoutScoreJoueur1", RpcTarget.All, 10);
                         break;
                     case "cheval":
-                        pointage1 += 15;
+                        photonView.RPC("AjoutScoreJoueur1", RpcTarget.All, 15);
                         break;
                     case "lama":
-                        pointage1 += 20;
+                        photonView.RPC("AjoutScoreJoueur1", RpcTarget.All, 20);
                         break;
                     default:
                         break;
-                }*/
+                }
             }
             onTientAnimal = false;
         }
@@ -188,29 +186,27 @@ public class DeplacementPersonnage : MonoBehaviourPunCallbacks
             if (PhotonNetwork.LocalPlayer == PhotonNetwork.PlayerList[1])
             {
                 print("etape1");
-                photonView.RPC("AjoutScore", RpcTarget.All, 10);
-                /*
                 switch (testPointsAndy.animalPris)
                 {
                     case "vache":
-                        pointage2 += 3;
+                        photonView.RPC("AjoutScoreJoueur2", RpcTarget.All, 3);
                         break;
                     case "mouton":
-                        pointage2 += 5;
+                        photonView.RPC("AjoutScoreJoueur2", RpcTarget.All, 5);
                         break;
                     case "chien":
-                        pointage2 += 10;
+                        photonView.RPC("AjoutScoreJoueur2", RpcTarget.All, 10);
                         print("etape2");
                         break;
                     case "cheval":
-                        pointage2 += 15;
+                        photonView.RPC("AjoutScoreJoueur2", RpcTarget.All, 15);
                         break;
                     case "lama":
-                        pointage2 += 20;
+                        photonView.RPC("AjoutScoreJoueur2", RpcTarget.All, 20);
                         break;
                     default:
                         break;
-                }*/
+                }
 
             }
             onTientAnimal = false;
@@ -218,8 +214,16 @@ public class DeplacementPersonnage : MonoBehaviourPunCallbacks
     }
 
     [PunRPC]
-    public void AjoutScore(int score)
+    public void AjoutScoreJoueur1(int score)
     {
+        print("ajout score joueur 1");
         pointage1 += score;
+    }
+
+    [PunRPC]
+    public void AjoutScoreJoueur2(int score)
+    {
+        print("ajout score joueur 2");
+        pointage2 += score;
     }
 }
