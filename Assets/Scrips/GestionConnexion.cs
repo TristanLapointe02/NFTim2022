@@ -168,6 +168,7 @@ public class GestionConnexion : MonoBehaviourPunCallbacks
         PhotonNetwork.CurrentRoom.IsVisible = false;
 
         //Load la scène/Niveau
+
         PhotonNetwork.LoadLevel("InGame");
     }
 
