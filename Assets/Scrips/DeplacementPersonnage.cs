@@ -155,7 +155,12 @@ public class DeplacementPersonnage : MonoBehaviourPunCallbacks
         }
         if (onTientAnimal == true && Input.GetKeyDown("e") && infoCollision.gameObject.name == "CAGE1")
         {
-            if(PhotonNetwork.LocalPlayer == PhotonNetwork.PlayerList[0])
+            if (photonView.IsMine)
+            {
+                GetComponent<Animator>().SetBool("animaux", false);
+            }
+
+            if (PhotonNetwork.LocalPlayer == PhotonNetwork.PlayerList[0])
             {
                 print("etape1");
                 switch (testPointsAndy.animalPris)
@@ -183,6 +188,11 @@ public class DeplacementPersonnage : MonoBehaviourPunCallbacks
         }
         if (onTientAnimal == true && Input.GetKeyDown("e") && infoCollision.gameObject.name == "CAGE2")
         {
+            if (photonView.IsMine)
+            {
+                GetComponent<Animator>().SetBool("animaux", false);
+            }
+
             if (PhotonNetwork.LocalPlayer == PhotonNetwork.PlayerList[1])
             {
                 print("etape1");
