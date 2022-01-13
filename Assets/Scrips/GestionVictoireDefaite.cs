@@ -4,10 +4,11 @@ using UnityEngine;
 using Photon.Realtime;
 using Photon.Pun;
 using UnityEngine.UI;
+using TMPro;
 
 public class GestionVictoireDefaite : MonoBehaviourPunCallbacks
 {
-    public Text texteFin;
+    public TextMeshProUGUI texteFin;
    
     // Update is called once per frame
     void Update()
