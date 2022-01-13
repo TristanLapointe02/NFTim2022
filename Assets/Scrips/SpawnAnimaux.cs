@@ -30,7 +30,8 @@ public class SpawnAnimaux : MonoBehaviourPunCallbacks
     }
 
     public void Spawn(){
-        if(photonView.IsMine){
+        if(photonView.IsMine && TimerPartieMultiplayer.partieCommencer == true)
+        {
             int animalHasard = Random.Range(0, animaux.Length);
             GameObject nouvelAnimal = PhotonNetwork.Instantiate(animaux[animalHasard].gameObject.name, animaux[animalHasard].transform.position, animaux[animalHasard].transform.rotation, 0, null);
             nouvelAnimal.SetActive(true); 
