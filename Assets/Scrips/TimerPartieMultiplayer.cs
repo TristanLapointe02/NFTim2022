@@ -24,7 +24,8 @@ public class TimerPartieMultiplayer : MonoBehaviourPunCallbacks
             timer -= Time.deltaTime;
             timerAvantFin.text = Mathf.RoundToInt(timer).ToString(); //modifie le texte en string
             if(timer <= 0){
-                finPartie();
+                photonView.RPC("finPartie", RpcTarget.All);
+                // finPartie();
             }
         }
          if(PhotonNetwork.PlayerList.Length == 2){
