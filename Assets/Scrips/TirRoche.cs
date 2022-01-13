@@ -89,7 +89,7 @@ public class TirRoche : MonoBehaviourPunCallbacks
     }
 
     void OnTriggerEnter(Collider infoCollision) {
-        if(infoCollision.gameObject.tag == "roche"){
+        if(infoCollision.gameObject.tag == "roche" && photonView.IsMine){
             print("je touche une roche");
             particuleEtourdi.SetActive(true);
             DeplacementPersonnage.etourdi = true;
@@ -98,7 +98,9 @@ public class TirRoche : MonoBehaviourPunCallbacks
     }
 
     void DesactiverParticule(){
+        if(photonView.IsMine){
         particuleEtourdi.SetActive(false);
         DeplacementPersonnage.etourdi = false;
+        }
     }
 }
