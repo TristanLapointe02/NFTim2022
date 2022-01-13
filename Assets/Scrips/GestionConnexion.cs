@@ -45,7 +45,7 @@ public class GestionConnexion : MonoBehaviourPunCallbacks
         }
 
         //Vérifier si le nombre de joueurs désiré est atteint.
-        if (PhotonNetwork.PlayerList.Length == 1 && PhotonNetwork.LocalPlayer.IsMasterClient == true)
+        if (PhotonNetwork.PlayerList.Length == 2 && PhotonNetwork.LocalPlayer.IsMasterClient == true)
         {
             //Si je suis le master client, j'ai le bouton de démarrage
             BoutonCommencerPartie.SetActive(true);

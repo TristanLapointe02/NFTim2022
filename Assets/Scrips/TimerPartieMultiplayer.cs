@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 public class TimerPartieMultiplayer : MonoBehaviourPunCallbacks
 {
     public static bool partieCommencer = false;
-    public static float timer = 40;
+    public static float timer = 180;
     public Text timerAvantFin;
 
     // Update is called once per frame
