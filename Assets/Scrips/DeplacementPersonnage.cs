@@ -158,7 +158,8 @@ public class DeplacementPersonnage : MonoBehaviourPunCallbacks
             if(PhotonNetwork.LocalPlayer == PhotonNetwork.PlayerList[0])
             {
                 print("etape1");
-                switch (testPointsAndy.animalPris)
+                photonView.RPC("AjoutScore", RpcTarget.All, 10);
+                /*switch (testPointsAndy.animalPris)
                 {
                     case "vache":
                         pointage1 += 3;
@@ -178,8 +179,7 @@ public class DeplacementPersonnage : MonoBehaviourPunCallbacks
                         break;
                     default:
                         break;
-                }
-               
+                }*/
             }
             onTientAnimal = false;
         }
@@ -187,6 +187,9 @@ public class DeplacementPersonnage : MonoBehaviourPunCallbacks
         {
             if (PhotonNetwork.LocalPlayer == PhotonNetwork.PlayerList[1])
             {
+                print("etape1");
+                photonView.RPC("AjoutScore", RpcTarget.All, 10);
+                /*
                 switch (testPointsAndy.animalPris)
                 {
                     case "vache":
@@ -207,10 +210,16 @@ public class DeplacementPersonnage : MonoBehaviourPunCallbacks
                         break;
                     default:
                         break;
-                }
+                }*/
 
             }
             onTientAnimal = false;
         }
+    }
+
+    [PunRPC]
+    public void AjoutScore(int score)
+    {
+        pointage1 += score;
     }
 }
