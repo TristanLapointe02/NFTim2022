@@ -19,10 +19,12 @@ public class DeplacementPersonnage : MonoBehaviourPunCallbacks
     public bool saut;
     public static bool etourdi;
     public Text score1;
-    public int pointage1;
+    public int pointage1 = 0;
     public Text score2;
     public int pointage2 = 0;
     public bool onTientAnimal;
+    public GameObject rondOrange;
+    public GameObject rondMauve;
 
     void Start()
     {
@@ -39,14 +41,22 @@ public class DeplacementPersonnage : MonoBehaviourPunCallbacks
 
     void Update()
     {
-        if (PhotonNetwork.CountOfPlayers == 1)
+        /*if (PhotonNetwork.CountOfPlayers == 1)
         {
             score1.text = PhotonNetwork.PlayerList[0].NickName + " " + pointage1;
-        }
-        else if (PhotonNetwork.CountOfPlayers == 2)
+        }*/
+        if (PhotonNetwork.CountOfPlayers == 2)
         {
             score1.text = PhotonNetwork.PlayerList[0].NickName + " " + pointage1;
-            score2.text = PhotonNetwork.PlayerList[1].NickName;
+            score2.text = PhotonNetwork.PlayerList[1].NickName + " " + pointage2;
+            if (PhotonNetwork.LocalPlayer == PhotonNetwork.PlayerList[0] && photonView.IsMine)
+            {
+                rondMauve.gameObject.SetActive(true);
+            }
+            if (PhotonNetwork.LocalPlayer == PhotonNetwork.PlayerList[1] && photonView.IsMine)
+            {
+                rondMauve.gameObject.SetActive(true);
+            }
         }
 
 
@@ -143,6 +153,10 @@ public class DeplacementPersonnage : MonoBehaviourPunCallbacks
         }
         else if (photonView.IsMine && onTientAnimal == true && Input.GetKey("e") && infoCollision.gameObject.name == "CAGE1")
         {
+            if(PhotonNetwork.LocalPlayer == PhotonNetwork.PlayerList[0])
+            {
+
+            }
             onTientAnimal = false;
             print("BAM");
         }
