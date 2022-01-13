@@ -5152,6 +5152,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Joseph
       objectReference: {fileID: 0}
+    - target: {fileID: 7402908359069504260, guid: 0eedd143fb9232a43b8ca5b77c3b32a4, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 7673289613210279745, guid: 0eedd143fb9232a43b8ca5b77c3b32a4, type: 3}
       propertyPath: cameraJoueur
       value: 
