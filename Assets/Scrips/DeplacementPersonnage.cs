@@ -47,16 +47,18 @@ public class DeplacementPersonnage : MonoBehaviourPunCallbacks
         {
             score1.text = PhotonNetwork.PlayerList[0].NickName + " " + pointage1;
         }*/
-        if (PhotonNetwork.CountOfPlayers == 2)
+        if (PhotonNetwork.PlayerList.Length == 2)
         {
             score1.text = PhotonNetwork.PlayerList[0].NickName + " " + pointage1;
             score2.text = PhotonNetwork.PlayerList[1].NickName + " " + pointage2;
             if (PhotonNetwork.LocalPlayer == PhotonNetwork.PlayerList[0] && photonView.IsMine)
             {
-                rondMauve.gameObject.SetActive(true);
+                rondVert.gameObject.SetActive(true);
+                rondMauve.gameObject.SetActive(false);
             }
             if (PhotonNetwork.LocalPlayer == PhotonNetwork.PlayerList[1] && photonView.IsMine)
             {
+                rondVert.gameObject.SetActive(false);
                 rondMauve.gameObject.SetActive(true);
             }
         }
