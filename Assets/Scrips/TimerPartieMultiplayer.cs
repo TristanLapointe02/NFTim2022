@@ -23,7 +23,7 @@ public class TimerPartieMultiplayer : MonoBehaviourPunCallbacks
         if(partieCommencer){
             timer -= Time.deltaTime;
             timerAvantFin.text = Mathf.RoundToInt(timer).ToString(); //modifie le texte en string
-            if(timer < 0){
+            if(timer <= 0){
                 finPartie();
             }
         }
@@ -34,6 +34,9 @@ public class TimerPartieMultiplayer : MonoBehaviourPunCallbacks
     }
    
     void finPartie(){
+        partieCommencer = false;
+        PhotonNetwork.LoadLevel("Fin");
         print("Fin partie");
+        
     }
 }

@@ -1358,7 +1358,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7061967781809367281, guid: 83411481da0f10140b986cc88457eaca, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7061967782471605559, guid: 83411481da0f10140b986cc88457eaca, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8002,6 +8002,8 @@ MonoBehaviour:
   positions: []
   positionTableau: 0
   quitterPanneau: {fileID: 1400248570}
+  FR: []
+  EN: []
 --- !u!1001 &1967663511
 PrefabInstance:
   m_ObjectHideFlags: 0
