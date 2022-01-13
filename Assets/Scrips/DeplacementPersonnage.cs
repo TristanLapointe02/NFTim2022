@@ -23,11 +23,13 @@ public class DeplacementPersonnage : MonoBehaviourPunCallbacks
     public Text score2;
     public int pointage2 = 0;
     public bool onTientAnimal;
-    public GameObject rondOrange;
+    public GameObject rondVert;
     public GameObject rondMauve;
 
     void Start()
     {
+        rondVert = GameObject.Find("RondVert");
+        rondMauve = GameObject.Find("RondMauve");
         score1 = GameObject.Find("ScoreJoueur1").GetComponent<Text>();
         score2 = GameObject.Find("ScoreJoueur2").GetComponent<Text>();
         rigidbodyPerso = GetComponent<Rigidbody>();
