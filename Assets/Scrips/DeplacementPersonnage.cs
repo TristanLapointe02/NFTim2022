@@ -1,24 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using Photon.Realtime;
 using Photon.Pun;
+using UnityEngine.UI;
 
 public class DeplacementPersonnage : MonoBehaviourPunCallbacks
 {
     public Rigidbody rigidbodyPerso;
     public GameObject camera3emePersonne;
     public GameObject main;
-    float vitesseDeplacement; 
-    public float hauteurSaut; 
-    public float ajoutGravite; 
-    private float forceDuSaut; 
-    private bool auSol; 
-    public bool saut; 
+    float vitesseDeplacement;
+    public float hauteurSaut;
+    public float ajoutGravite;
+    private float forceDuSaut;
+    private bool auSol;
+    public bool saut;
     public static bool etourdi;
+    public Text score1;
+    public int pointage1;
+    public Text score2;
+    public int pointage2 = 0;
+    public bool onTientAnimal;
 
     void Start()
     {
+        score1 = GameObject.Find("ScoreJoueur1").GetComponent<Text>();
+        score2 = GameObject.Find("ScoreJoueur2").GetComponent<Text>();
         rigidbodyPerso = GetComponent<Rigidbody>();
 
         //Activer la cam�ra localement
@@ -30,6 +39,17 @@ public class DeplacementPersonnage : MonoBehaviourPunCallbacks
 
     void Update()
     {
+        if (PhotonNetwork.CountOfPlayers == 1)
+        {
+            score1.text = PhotonNetwork.PlayerList[0].NickName + " " + pointage1;
+        }
+        else if (PhotonNetwork.CountOfPlayers == 2)
+        {
+            score1.text = PhotonNetwork.PlayerList[0].NickName + " " + pointage1;
+            score2.text = PhotonNetwork.PlayerList[1].NickName;
+        }
+
+
         if (photonView.IsMine)
         {
             float hDeplacement = Input.GetAxisRaw("Horizontal");
@@ -91,7 +111,8 @@ public class DeplacementPersonnage : MonoBehaviourPunCallbacks
         }
     }
 
-    void FixedUpdate(){
+    void FixedUpdate()
+    {
         if (photonView.IsMine)
         {
             if (auSol)
@@ -108,12 +129,26 @@ public class DeplacementPersonnage : MonoBehaviourPunCallbacks
         }
     }
 
-    void OnTriggerStay(Collider infoCollision){
-        if((infoCollision.gameObject.tag == "lama" || infoCollision.gameObject.tag == "cheval" ||
+    void OnTriggerStay(Collider infoCollision)
+    {
+        if ((infoCollision.gameObject.tag == "lama" || infoCollision.gameObject.tag == "cheval" ||
         infoCollision.gameObject.tag == "chien" || infoCollision.gameObject.tag == "mouton" ||
-        infoCollision.gameObject.tag == "vache") && Input.GetKey("e") && photonView.IsMine){
+        infoCollision.gameObject.tag == "vache" || infoCollision.gameObject.tag == "zebre" ||
+        infoCollision.gameObject.tag == "pug" || infoCollision.gameObject.tag == "cochon") && Input.GetKey("e") && onTientAnimal == false && photonView.IsMine)
+        {
             GetComponent<Animator>().SetBool("animaux", true);
             infoCollision.transform.parent = main.transform;
+            //infoCollision.gameObject.GetComponent<NavMeshAgent>().isStopped = true;
+            onTientAnimal = true;
+        }
+        else if (photonView.IsMine && onTientAnimal == true && Input.GetKey("e") && infoCollision.gameObject.name == "CAGE1")
+        {
+            onTientAnimal = false;
+            print("BAM");
+        }
+        else if (photonView.IsMine && onTientAnimal == true && Input.GetKey("e") && infoCollision.gameObject.name == "CAGE2")
+        {
+
         }
     }
 }
