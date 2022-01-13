@@ -156,12 +156,7 @@ public class DeplacementPersonnage : MonoBehaviourPunCallbacks
         }
         if (onTientAnimal == true && Input.GetKeyDown("e") && infoCollision.gameObject.name == "CAGE1")
         {
-            if (photonView.IsMine)
-            {
-                GetComponent<Animator>().SetBool("animaux", false);
-            }
-
-            if (PhotonNetwork.LocalPlayer == PhotonNetwork.PlayerList[0])
+            if (PhotonNetwork.LocalPlayer == PhotonNetwork.PlayerList[1])
             {
                 print("etape1");
                 switch (animalPris)
@@ -185,22 +180,21 @@ public class DeplacementPersonnage : MonoBehaviourPunCallbacks
                         break;
                 }
             }
+            if (photonView.IsMine)
+            {
+                GetComponent<Animator>().SetBool("animaux", false);
+            } 
             onTientAnimal = false;
         }
         if (onTientAnimal == true && Input.GetKeyDown("e") && infoCollision.gameObject.name == "CAGE2")
         {
-            if (photonView.IsMine)
-            {
-                GetComponent<Animator>().SetBool("animaux", false);
-            }
-
-            if (PhotonNetwork.LocalPlayer == PhotonNetwork.PlayerList[1])
+            if (PhotonNetwork.LocalPlayer == PhotonNetwork.PlayerList[0])
             {
                 print("etape1");
                 switch (animalPris)
                 {
                     case "vache":
-                        photonView.RPC("AjoutScoreJoueur2", RpcTarget.AllBuffered, 3);
+                        photonView.RPC("AjoutScoreJoueur2", RpcTarget.MasterClient, 3);
                         break;
                     case "mouton":
                         photonView.RPC("AjoutScoreJoueur2", RpcTarget.AllBuffered, 5);
@@ -219,6 +213,10 @@ public class DeplacementPersonnage : MonoBehaviourPunCallbacks
                         break;
                 }
 
+            }
+            if (photonView.IsMine)
+            {
+                GetComponent<Animator>().SetBool("animaux", false);
             }
             onTientAnimal = false;
         }
