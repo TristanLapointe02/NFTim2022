@@ -197,6 +197,7 @@ public class DeplacementPersonnage : MonoBehaviourPunCallbacks
                         break;
                     case "chien":
                         pointage2 += 10;
+                        print("etape2");
                         break;
                     case "cheval":
                         pointage2 += 15;
