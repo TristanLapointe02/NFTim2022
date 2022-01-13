@@ -31,7 +31,7 @@ public class ProprietaireAnimal : MonoBehaviourPunCallbacks
         || joueurAvecAnimal.gameObject.tag != "lama" || joueurAvecAnimal.gameObject.tag != "vache"
         || joueurAvecAnimal.gameObject.tag != "zebre") && photonView.IsMine && tiensAnimal == true && joueurAvecAnimal != null)
         {
-            gameObject.transform.position =  joueurAvecAnimal.transform.position + transform.forward * 1.1f;
+            gameObject.transform.position =  joueurAvecAnimal.transform.position;
             // La ligne commenté explose la vitesse des autres animaux, faudrait trouver un moyen de target seulement l'animal picked up
             /* gameObject.transform.position = joueurAvecAnimal.transform.position + transform.up * 0.5f + transform.forward * 1.1f; */
         } 
