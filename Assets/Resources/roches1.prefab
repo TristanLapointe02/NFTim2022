@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 3606749881371450204}
   - component: {fileID: 5843943761184200840}
   - component: {fileID: -125774591343015817}
+  - component: {fileID: -3685433701338120685}
   m_Layer: 0
   m_Name: roches1
   m_TagString: roche
@@ -111,7 +112,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1487054196713655655}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.012221904
@@ -189,3 +190,15 @@ MonoBehaviour:
   m_SynchronizeAngularVelocity: 1
   m_TeleportEnabled: 0
   m_TeleportIfDistanceGreaterThan: 3
+--- !u!114 &-3685433701338120685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1487054196713655655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abf9e4f0b1da78144941a7b38275a5a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

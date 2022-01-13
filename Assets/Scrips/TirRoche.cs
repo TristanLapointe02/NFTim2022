@@ -88,8 +88,9 @@ public class TirRoche : MonoBehaviourPunCallbacks
         audioCam.PlayOneShot(sonLancer);
     }
 
-    private void OnTriggerEnter(Collider infoCollision) {
+    void OnTriggerEnter(Collider infoCollision) {
         if(infoCollision.gameObject.tag == "roche"){
+            print("je touche une roche");
             particuleEtourdi.SetActive(true);
             DeplacementPersonnage.etourdi = true;
             Invoke("DesactiverParticule", 3f);
