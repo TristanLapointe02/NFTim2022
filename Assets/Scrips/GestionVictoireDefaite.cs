@@ -21,6 +21,10 @@ public class GestionVictoireDefaite : MonoBehaviourPunCallbacks
         {
             texteFin.text = PhotonNetwork.PlayerList[1].NickName + " est gagnant!!!";
         }
+        else
+        {
+            texteFin.text = "Partie nulle";
+        }
     }
     
     //Quitter la partie
