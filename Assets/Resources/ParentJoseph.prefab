@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1030095827
 Transform:
   m_ObjectHideFlags: 0
@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1030095824}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.06793473, y: 0.5542084, z: 0.3033253}
+  m_LocalPosition: {x: -0.029, y: 0.5542084, z: -0.004}
   m_LocalScale: {x: 0.16250525, y: 0.16250528, z: 0.16250528}
   m_Children: []
   m_Father: {fileID: 7317117071407975906}
@@ -5166,7 +5166,7 @@ PrefabInstance:
       objectReference: {fileID: 7061967782642060752}
     - target: {fileID: 7673289613210279754, guid: 0eedd143fb9232a43b8ca5b77c3b32a4, type: 3}
       propertyPath: vitesseRoche
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7673289613210279754, guid: 0eedd143fb9232a43b8ca5b77c3b32a4, type: 3}
       propertyPath: particuleEtourdi
