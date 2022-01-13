@@ -153,7 +153,7 @@ public class DeplacementPersonnage : MonoBehaviourPunCallbacks
             //infoCollision.gameObject.GetComponent<NavMeshAgent>().isStopped = true;
             onTientAnimal = true;
         }
-        if (photonView.IsMine && onTientAnimal == true && Input.GetKey("e") && infoCollision.gameObject.name == "CAGE1")
+        if (photonView.IsMine && onTientAnimal == true && Input.GetKeyDown("e") && infoCollision.gameObject.name == "CAGE1")
         {
             if(PhotonNetwork.LocalPlayer == PhotonNetwork.PlayerList[0])
             {
@@ -181,7 +181,7 @@ public class DeplacementPersonnage : MonoBehaviourPunCallbacks
             }
             onTientAnimal = false;
         }
-        if (photonView.IsMine && onTientAnimal == true && Input.GetKey("e") && infoCollision.gameObject.name == "CAGE2")
+        if (photonView.IsMine && onTientAnimal == true && Input.GetKeyDown("e") && infoCollision.gameObject.name == "CAGE2")
         {
             if (PhotonNetwork.LocalPlayer == PhotonNetwork.PlayerList[1])
             {
