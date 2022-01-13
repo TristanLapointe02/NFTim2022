@@ -229,6 +229,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c362de148e99264b8e5362bcddffda0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  texteVictoire: {fileID: 708288918}
+  texteDefaite: {fileID: 0}
 --- !u!4 &30653161
 Transform:
   m_ObjectHideFlags: 0
@@ -1661,8 +1663,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GestionConnexion, Assembly-CSharp
+      - m_Target: {fileID: 30653160}
+        m_TargetAssemblyTypeName: GestionVictoireDefaite, Assembly-CSharp
         m_MethodName: QuitterPartie
         m_Mode: 1
         m_Arguments:
