@@ -158,7 +158,6 @@ public class DeplacementPersonnage : MonoBehaviourPunCallbacks
             if(PhotonNetwork.LocalPlayer == PhotonNetwork.PlayerList[0])
             {
                 print("etape1");
-                PhotonNetwork.Destroy(infoCollision.gameObject);
                 switch (testPointsAndy.animalPris)
                 {
                     case "vache":
@@ -188,7 +187,6 @@ public class DeplacementPersonnage : MonoBehaviourPunCallbacks
         {
             if (PhotonNetwork.LocalPlayer == PhotonNetwork.PlayerList[1])
             {
-                PhotonNetwork.Destroy(infoCollision.gameObject);
                 switch (testPointsAndy.animalPris)
                 {
                     case "vache":
