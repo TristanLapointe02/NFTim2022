@@ -53,7 +53,7 @@ public class gestionScore : MonoBehaviourPunCallbacks
                     photonView.RPC("AjoutScoreJoueur1", RpcTarget.All, 5);
                 }
                 break;
-            case "chien":
+            case "pug":
                 if (infoCollision.gameObject.GetComponent<PhotonView>().Owner.NickName == PhotonNetwork.PlayerList[0].NickName)
                 {
                     photonView.RPC("AjoutScoreJoueur2", RpcTarget.All, 10);

@@ -59,7 +59,7 @@ public class ProprietaireAnimal : MonoBehaviourPunCallbacks
                 case "mouton":
                     photonView.RPC("JouerSonMouton", RpcTarget.All);
                     break;
-                case "chien":
+                case "pug":
                     photonView.RPC("JouerSonChien", RpcTarget.All);
                     break;
                 case "cheval":

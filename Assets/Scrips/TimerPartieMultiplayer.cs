@@ -8,24 +8,19 @@ using UnityEngine.SceneManagement;
 
 public class TimerPartieMultiplayer : MonoBehaviourPunCallbacks
 {
-    static bool partieCommencer;
+    public static bool partieCommencer = false;
     public float timer;
     public Text timerAvantFin;
-    // Start is called before the first frame update
-    void Start()
-    {
-        partieCommencer = false;
-    }
 
     // Update is called once per frame
     void Update()
     {
-        if(partieCommencer){
+        if(partieCommencer == true)
+        {
             timer -= Time.deltaTime;
             timerAvantFin.text = Mathf.RoundToInt(timer).ToString(); //modifie le texte en string
-            if(timer <= 0){
+            if(timer <= 0f){
                 photonView.RPC("finPartie", RpcTarget.All);
-                // finPartie();
             }
         }
          if(PhotonNetwork.PlayerList.Length == 2){
@@ -34,10 +29,15 @@ public class TimerPartieMultiplayer : MonoBehaviourPunCallbacks
        
     }
    
-    void finPartie(){
+    [PunRPC]
+    public void finPartie(){
         partieCommencer = false;
         PhotonNetwork.LoadLevel("Fin");
         print("Fin partie");
-        
     }
+
+    /*
+     * GetComponent<Animator>().SetBool("victoire", true);
+       GetComponent<Animator>().SetBool("defaite", true);
+    */
 }
