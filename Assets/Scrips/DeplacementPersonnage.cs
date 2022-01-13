@@ -156,29 +156,30 @@ public class DeplacementPersonnage : MonoBehaviourPunCallbacks
         }
         if (onTientAnimal == true && Input.GetKeyDown("e") && infoCollision.gameObject.name == "CAGE1")
         {
+            switch (animalPris)
+            {
+                case "vache":
+                    photonView.RPC("AjoutScoreJoueur1", RpcTarget.All, 3);
+                    break;
+                case "mouton":
+                    photonView.RPC("AjoutScoreJoueur1", RpcTarget.All, 5);
+                    break;
+                case "chien":
+                    photonView.RPC("AjoutScoreJoueur1", RpcTarget.All, 10);
+                    break;
+                case "cheval":
+                    photonView.RPC("AjoutScoreJoueur1", RpcTarget.All, 15);
+                    break;
+                case "lama":
+                    photonView.RPC("AjoutScoreJoueur1", RpcTarget.All, 20);
+                    break;
+                default:
+                    break;
+            }
             if (PhotonNetwork.LocalPlayer == PhotonNetwork.PlayerList[0])
             {
                 print("etape1");
-                switch (animalPris)
-                {
-                    case "vache":
-                        photonView.RPC("AjoutScoreJoueur1", RpcTarget.All, 3);
-                        break;
-                    case "mouton":
-                        photonView.RPC("AjoutScoreJoueur1", RpcTarget.All, 5);
-                        break;
-                    case "chien":
-                        photonView.RPC("AjoutScoreJoueur1", RpcTarget.All, 10);
-                        break;
-                    case "cheval":
-                        photonView.RPC("AjoutScoreJoueur1", RpcTarget.All, 15);
-                        break;
-                    case "lama":
-                        photonView.RPC("AjoutScoreJoueur1", RpcTarget.All, 20);
-                        break;
-                    default:
-                        break;
-                }
+                
             }
             if (photonView.IsMine)
             {
@@ -188,30 +189,31 @@ public class DeplacementPersonnage : MonoBehaviourPunCallbacks
         }
         if (onTientAnimal == true && Input.GetKeyDown("e") && infoCollision.gameObject.name == "CAGE2")
         {
+            switch (animalPris)
+            {
+                case "vache":
+                    photonView.RPC("AjoutScoreJoueur2", RpcTarget.All, 3);
+                    break;
+                case "mouton":
+                    photonView.RPC("AjoutScoreJoueur2", RpcTarget.All, 5);
+                    break;
+                case "chien":
+                    photonView.RPC("AjoutScoreJoueur2", RpcTarget.All, 10);
+                    print("etape2");
+                    break;
+                case "cheval":
+                    photonView.RPC("AjoutScoreJoueur2", RpcTarget.All, 15);
+                    break;
+                case "lama":
+                    photonView.RPC("AjoutScoreJoueur2", RpcTarget.All, 20);
+                    break;
+                default:
+                    break;
+            }
             if (PhotonNetwork.LocalPlayer == PhotonNetwork.PlayerList[1])
             {
                 print("etape1");
-                switch (animalPris)
-                {
-                    case "vache":
-                        photonView.RPC("AjoutScoreJoueur2", RpcTarget.All, 3);
-                        break;
-                    case "mouton":
-                        photonView.RPC("AjoutScoreJoueur2", RpcTarget.All, 5);
-                        break;
-                    case "chien":
-                        photonView.RPC("AjoutScoreJoueur2", RpcTarget.All, 10);
-                        print("etape2");
-                        break;
-                    case "cheval":
-                        photonView.RPC("AjoutScoreJoueur2", RpcTarget.All, 15);
-                        break;
-                    case "lama":
-                        photonView.RPC("AjoutScoreJoueur2", RpcTarget.All, 20);
-                        break;
-                    default:
-                        break;
-                }
+                
 
             }
             if (photonView.IsMine)
