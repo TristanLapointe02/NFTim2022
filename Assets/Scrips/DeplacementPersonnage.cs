@@ -166,19 +166,19 @@ public class DeplacementPersonnage : MonoBehaviourPunCallbacks
                 switch (testPointsAndy.animalPris)
                 {
                     case "vache":
-                        photonView.RPC("AjoutScoreJoueur1", RpcTarget.All, 3);
+                        photonView.RPC("AjoutScoreJoueur1", RpcTarget.AllBuffered, 3);
                         break;
                     case "mouton":
-                        photonView.RPC("AjoutScoreJoueur1", RpcTarget.All, 5);
+                        photonView.RPC("AjoutScoreJoueur1", RpcTarget.AllBuffered, 5);
                         break;
                     case "chien":
-                        photonView.RPC("AjoutScoreJoueur1", RpcTarget.All, 10);
+                        photonView.RPC("AjoutScoreJoueur1", RpcTarget.AllBuffered, 10);
                         break;
                     case "cheval":
-                        photonView.RPC("AjoutScoreJoueur1", RpcTarget.All, 15);
+                        photonView.RPC("AjoutScoreJoueur1", RpcTarget.AllBuffered, 15);
                         break;
                     case "lama":
-                        photonView.RPC("AjoutScoreJoueur1", RpcTarget.All, 20);
+                        photonView.RPC("AjoutScoreJoueur1", RpcTarget.AllBuffered, 20);
                         break;
                     default:
                         break;
@@ -199,20 +199,20 @@ public class DeplacementPersonnage : MonoBehaviourPunCallbacks
                 switch (testPointsAndy.animalPris)
                 {
                     case "vache":
-                        photonView.RPC("AjoutScoreJoueur2", RpcTarget.All, 3);
+                        photonView.RPC("AjoutScoreJoueur2", RpcTarget.AllBuffered, 3);
                         break;
                     case "mouton":
-                        photonView.RPC("AjoutScoreJoueur2", RpcTarget.All, 5);
+                        photonView.RPC("AjoutScoreJoueur2", RpcTarget.AllBuffered, 5);
                         break;
                     case "chien":
-                        photonView.RPC("AjoutScoreJoueur2", RpcTarget.All, 10);
+                        photonView.RPC("AjoutScoreJoueur2", RpcTarget.AllBuffered, 10);
                         print("etape2");
                         break;
                     case "cheval":
-                        photonView.RPC("AjoutScoreJoueur2", RpcTarget.All, 15);
+                        photonView.RPC("AjoutScoreJoueur2", RpcTarget.AllBuffered, 15);
                         break;
                     case "lama":
-                        photonView.RPC("AjoutScoreJoueur2", RpcTarget.All, 20);
+                        photonView.RPC("AjoutScoreJoueur2", RpcTarget.AllBuffered, 20);
                         break;
                     default:
                         break;

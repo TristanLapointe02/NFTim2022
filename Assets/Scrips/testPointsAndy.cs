@@ -15,7 +15,6 @@ public class testPointsAndy : MonoBehaviourPunCallbacks
         {
             print("tag de l'animal" + animalPris);
             animalPris = infoCollisionAnimaux.gameObject.tag.ToString();
-            
         }
     }
 }
