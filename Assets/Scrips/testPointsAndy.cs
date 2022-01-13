@@ -8,12 +8,14 @@ using Photon.Pun;
 public class testPointsAndy : MonoBehaviourPunCallbacks
 {
     public static string animalPris;
-    private void OnTriggerEnter(Collider infoCollisionAnimaux)
+    public void OnTriggerEnter(Collider infoCollisionAnimaux)
     {
-        if (infoCollisionAnimaux.gameObject.tag == "vache")
+        //Si c'est un animal...
+        if(infoCollisionAnimaux.gameObject.layer == 6)
         {
+            print("tag de l'animal" + animalPris);
             animalPris = infoCollisionAnimaux.gameObject.tag.ToString();
-            PhotonNetwork.Destroy(infoCollisionAnimaux.gameObject);
+            
         }
     }
 }

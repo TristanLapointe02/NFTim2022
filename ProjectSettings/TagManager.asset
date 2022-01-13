@@ -16,6 +16,8 @@ TagManager:
   - pug
   - zebre
   - cochon
+  - FR
+  - EN
   layers:
   - Default
   - TransparentFX
@@ -23,7 +25,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Animal
   - 
   - 
   - 

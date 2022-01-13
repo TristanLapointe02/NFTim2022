@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1820651963543544268}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FrontLeg.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3285914948851830826}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BackLowLeg.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1640766738909700223}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8018611983519972804}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hips
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133,7 +133,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7835585582075467524}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BackFoot.L_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -163,7 +163,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7743464943301070050}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -200,7 +200,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7855077574234371172}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -240,7 +240,7 @@ GameObject:
   - component: {fileID: -7313286115498611671}
   - component: {fileID: 5671999228062327008}
   - component: {fileID: 4255989793742703866}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pig
   m_TagString: cochon
   m_Icon: {fileID: 0}
@@ -445,7 +445,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2757239122422491613}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -480,7 +480,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1466418624773018538}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Head_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -510,7 +510,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4147958495398339779}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BackLeg.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -541,7 +541,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7231604697592651569}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FrontUpLeg.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -572,7 +572,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3043221947257032661}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FrontLowLeg.L_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -602,7 +602,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2952799752034670858}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FrontFoot.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -633,7 +633,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6483035951639808464}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BackUpLeg.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -664,7 +664,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1291354821939310800}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BackLowLeg.R_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -694,7 +694,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4963024833843265770}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BackFoot.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -725,7 +725,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5931380251485542048}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FrontUpLeg.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -756,7 +756,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6604912579947380492}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FrontFoot.L_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -786,7 +786,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5224925478292561403}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BackFoot.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -817,7 +817,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 489784822871784002}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -848,7 +848,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 554336140681091841}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Shoulders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -879,7 +879,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8477917250371141518}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FrontFoot.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -910,7 +910,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1682709976182424634}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Torso
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -941,7 +941,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 73023201297268542}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BackLowLeg.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -972,7 +972,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7238392451558477256}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FrontLowLeg.R_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1002,7 +1002,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8922963369450179952}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FrontLowLeg.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1033,7 +1033,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6205064086734631954}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BackLowLeg.L_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1063,7 +1063,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3769720752760071107}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FrontFoot.R_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1093,7 +1093,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8074037902621574368}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BackLeg.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1125,7 +1125,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2598549121831798441}
   - component: {fileID: 5222230440969122238}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1233,7 +1233,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3710692556901217556}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BackFoot.R_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1263,7 +1263,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2671690013366697513}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FrontLowLeg.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1294,7 +1294,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5854995930874482971}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FrontLeg.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1325,7 +1325,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7847860892459463199}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Armature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1356,7 +1356,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2719736303802997642}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Back_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1386,7 +1386,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8789824541968731560}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BackUpLeg.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1417,7 +1417,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7433373756642416899}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Torso_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
