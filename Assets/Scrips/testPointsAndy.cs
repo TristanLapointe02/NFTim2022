@@ -2,39 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Photon.Realtime;
+using Photon.Pun;
 
-public class testPointsAndy : MonoBehaviour
+public class testPointsAndy : MonoBehaviourPunCallbacks
 {
+    public static string animalPris;
     private void OnTriggerEnter(Collider infoCollisionAnimaux)
     {
         if (infoCollisionAnimaux.gameObject.tag == "vache")
         {
-            scoreManager.instance.pointsVache();
-            Destroy(infoCollisionAnimaux.gameObject);
-        }
-
-        else if (infoCollisionAnimaux.gameObject.tag == "mouton")
-        {
-            scoreManager.instance.pointsMouton();
-            Destroy(infoCollisionAnimaux.gameObject);
-        }
-
-        else if (infoCollisionAnimaux.gameObject.tag == "chien")
-        {
-            scoreManager.instance.pointsChien();
-            Destroy(infoCollisionAnimaux.gameObject);
-        }
-
-        else if (infoCollisionAnimaux.gameObject.tag == "cheval")
-        {
-            scoreManager.instance.pointsCheval();
-            Destroy(infoCollisionAnimaux.gameObject);
-        }
-
-        else if (infoCollisionAnimaux.gameObject.tag == "lama")
-        {
-            scoreManager.instance.pointsLama();
-            Destroy(infoCollisionAnimaux.gameObject);
+            animalPris = infoCollisionAnimaux.gameObject.tag.ToString();
+            PhotonNetwork.Destroy(infoCollisionAnimaux.gameObject);
         }
     }
 }

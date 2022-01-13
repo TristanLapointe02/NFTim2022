@@ -95,8 +95,6 @@ public class DeplacementPersonnage : MonoBehaviourPunCallbacks
                 }
             }
 
-
-
             if (vitesseDeplacement <= 7f && (Input.GetKey("w") || Input.GetKey("s") || Input.GetKey("a") || Input.GetKey("d")))
             {
                 vitesseDeplacement += 0.08f;
@@ -159,14 +157,57 @@ public class DeplacementPersonnage : MonoBehaviourPunCallbacks
         {
             if(PhotonNetwork.LocalPlayer == PhotonNetwork.PlayerList[0])
             {
-
+                switch (testPointsAndy.animalPris)
+                {
+                    case "vache":
+                        pointage1 += 3;
+                        break;
+                    case "mouton":
+                        pointage1 += 5;
+                        break;
+                    case "chien":
+                        pointage1 += 10;
+                        break;
+                    case "cheval":
+                        pointage1 += 15;
+                        break;
+                    case "lama":
+                        pointage1 += 20;
+                        break;
+                    default:
+                        break;
+                }
+               
             }
             onTientAnimal = false;
-            print("BAM");
         }
         else if (photonView.IsMine && onTientAnimal == true && Input.GetKey("e") && infoCollision.gameObject.name == "CAGE2")
         {
-            
+            if (PhotonNetwork.LocalPlayer == PhotonNetwork.PlayerList[1])
+            {
+                switch (testPointsAndy.animalPris)
+                {
+                    case "vache":
+                        pointage1 += 3;
+                        break;
+                    case "mouton":
+                        pointage2 += 5;
+                        break;
+                    case "chien":
+                        pointage2 += 10;
+                        break;
+                    case "cheval":
+                        pointage2 += 15;
+                        break;
+                    case "lama":
+                        pointage2 += 20;
+                        break;
+                    default:
+                        break;
+                }
+
+            }
+            onTientAnimal = false;
         }
     }
 }
