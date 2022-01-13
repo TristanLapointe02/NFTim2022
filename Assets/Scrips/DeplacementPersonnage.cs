@@ -19,9 +19,9 @@ public class DeplacementPersonnage : MonoBehaviourPunCallbacks
     public bool saut;
     public static bool etourdi;
     public Text score1;
-    public int pointage1 = 0;
+    public int pointage1;
     public Text score2;
-    public int pointage2 = 0;
+    public int pointage2;
     public bool onTientAnimal;
     public GameObject rondVert;
     public GameObject rondMauve;
@@ -51,6 +51,7 @@ public class DeplacementPersonnage : MonoBehaviourPunCallbacks
         {
             score1.text = PhotonNetwork.PlayerList[0].NickName + " " + pointage1;
             score2.text = PhotonNetwork.PlayerList[1].NickName + " " + pointage2;
+            print("test");
             if (PhotonNetwork.LocalPlayer == PhotonNetwork.PlayerList[0] && photonView.IsMine)
             {
                 rondVert.gameObject.SetActive(true);
