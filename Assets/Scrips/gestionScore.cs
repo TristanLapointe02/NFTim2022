@@ -34,71 +34,71 @@ public class gestionScore : MonoBehaviourPunCallbacks
             case "vache":
                 if (infoCollision.gameObject.GetComponent<PhotonView>().Owner.NickName == PhotonNetwork.PlayerList[0].NickName)
                 {
-                    photonView.RPC("AjoutScoreJoueur1", RpcTarget.All, 3);
+                    photonView.RPC("AjoutScoreJoueur2", RpcTarget.All, 3);
                 }
                 else if (infoCollision.gameObject.GetComponent<PhotonView>().Owner.NickName == PhotonNetwork.PlayerList[1].NickName)
                 {
-                    photonView.RPC("AjoutScoreJoueur2", RpcTarget.All, 3);
+                    photonView.RPC("AjoutScoreJoueur1", RpcTarget.All, 3);
                 }
                 break;
             case "mouton":
                 if (infoCollision.gameObject.GetComponent<PhotonView>().Owner.NickName == PhotonNetwork.PlayerList[0].NickName)
                 {
-                    photonView.RPC("AjoutScoreJoueur1", RpcTarget.All, 5);
+                    photonView.RPC("AjoutScoreJoueur2", RpcTarget.All, 5);
                 }
                 else if (infoCollision.gameObject.GetComponent<PhotonView>().Owner.NickName == PhotonNetwork.PlayerList[1].NickName)
                 {
-                    photonView.RPC("AjoutScoreJoueur2", RpcTarget.All, 5);
+                    photonView.RPC("AjoutScoreJoueur1", RpcTarget.All, 5);
                 }
                 break;
             case "chien":
                 if (infoCollision.gameObject.GetComponent<PhotonView>().Owner.NickName == PhotonNetwork.PlayerList[0].NickName)
                 {
-                    photonView.RPC("AjoutScoreJoueur1", RpcTarget.All, 10);
+                    photonView.RPC("AjoutScoreJoueur2", RpcTarget.All, 10);
                 }
                 else if (infoCollision.gameObject.GetComponent<PhotonView>().Owner.NickName == PhotonNetwork.PlayerList[1].NickName)
                 {
-                    photonView.RPC("AjoutScoreJoueur2", RpcTarget.All, 10);
+                    photonView.RPC("AjoutScoreJoueur1", RpcTarget.All, 10);
                 }
                 break;
             case "cheval":
                 if (infoCollision.gameObject.GetComponent<PhotonView>().Owner.NickName == PhotonNetwork.PlayerList[0].NickName)
                 {
-                    photonView.RPC("AjoutScoreJoueur1", RpcTarget.All, 15);
+                    photonView.RPC("AjoutScoreJoueur2", RpcTarget.All, 15);
                 }
                 else if (infoCollision.gameObject.GetComponent<PhotonView>().Owner.NickName == PhotonNetwork.PlayerList[1].NickName)
                 {
-                    photonView.RPC("AjoutScoreJoueur2", RpcTarget.All, 15);
+                    photonView.RPC("AjoutScoreJoueur1", RpcTarget.All, 15);
                 }
                 break;
             case "lama":
                 if (infoCollision.gameObject.GetComponent<PhotonView>().Owner.NickName == PhotonNetwork.PlayerList[0].NickName)
                 {
-                    photonView.RPC("AjoutScoreJoueur1", RpcTarget.All, 20);
+                    photonView.RPC("AjoutScoreJoueur2", RpcTarget.All, 20);
                 }
                 else if (infoCollision.gameObject.GetComponent<PhotonView>().Owner.NickName == PhotonNetwork.PlayerList[1].NickName)
                 {
-                    photonView.RPC("AjoutScoreJoueur2", RpcTarget.All, 20);
+                    photonView.RPC("AjoutScoreJoueur1", RpcTarget.All, 20);
                 }
                 break;
             case "zebre":
                 if (infoCollision.gameObject.GetComponent<PhotonView>().Owner.NickName == PhotonNetwork.PlayerList[0].NickName)
                 {
-                    photonView.RPC("AjoutScoreJoueur1", RpcTarget.All, 25);
+                    photonView.RPC("AjoutScoreJoueur2", RpcTarget.All, 25);
                 }
                 else if (infoCollision.gameObject.GetComponent<PhotonView>().Owner.NickName == PhotonNetwork.PlayerList[1].NickName)
                 {
-                    photonView.RPC("AjoutScoreJoueur2", RpcTarget.All, 25);
+                    photonView.RPC("AjoutScoreJoueur1", RpcTarget.All, 25);
                 }
                 break;
             case "cochon":
                 if (infoCollision.gameObject.GetComponent<PhotonView>().Owner.NickName == PhotonNetwork.PlayerList[0].NickName)
                 {
-                    photonView.RPC("AjoutScoreJoueur1", RpcTarget.All, 4);
+                    photonView.RPC("AjoutScoreJoueur2", RpcTarget.All, 4);
                 }
                 else if (infoCollision.gameObject.GetComponent<PhotonView>().Owner.NickName == PhotonNetwork.PlayerList[1].NickName)
                 {
-                    photonView.RPC("AjoutScoreJoueur2", RpcTarget.All, 4);
+                    photonView.RPC("AjoutScoreJoueur1", RpcTarget.All, 4);
                 }
                 break;
             default:
