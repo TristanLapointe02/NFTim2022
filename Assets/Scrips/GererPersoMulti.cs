@@ -18,20 +18,23 @@ public class GererPersoMulti : MonoBehaviourPunCallbacks
     // Start is called before the first frame update
     void Start()
     {
-        //Choisir une valeur aléatoire de position de spawn du personnage
-        positionTableau = Random.Range(0, 7);
-        //INSTANCIER Edgar
-        if (GestionConnexion.PersonnageChoisi == "Edgar")
+        if (SceneManager.GetActiveScene().buildIndex != 0)
         {
-            joueurLocal = PhotonNetwork.Instantiate("ParentEdgard", positions[positionTableau], Quaternion.identity, 0, null);
-        }
-        //INSTANCIER Joseph
-        if (GestionConnexion.PersonnageChoisi == "Joseph")
-        {
-            joueurLocal = PhotonNetwork.Instantiate("ParentJoseph", positions[positionTableau], Quaternion.identity, 0, null);
-        }
-        //CHANGER NOM JOUEUR LOCAL         
-        joueurLocal.name = PhotonNetwork.LocalPlayer.NickName;
+            //Choisir une valeur aléatoire de position de spawn du personnage
+            positionTableau = Random.Range(0, 7);
+            //INSTANCIER Edgar
+            if (GestionConnexion.PersonnageChoisi == "Edgar")
+            {
+                joueurLocal = PhotonNetwork.Instantiate("ParentEdgard", positions[positionTableau], Quaternion.identity, 0, null);
+            }
+            //INSTANCIER Joseph
+            if (GestionConnexion.PersonnageChoisi == "Joseph")
+            {
+                joueurLocal = PhotonNetwork.Instantiate("ParentJoseph", positions[positionTableau], Quaternion.identity, 0, null);
+            }
+            //CHANGER NOM JOUEUR LOCAL         
+            joueurLocal.name = PhotonNetwork.LocalPlayer.NickName;
+        }  
     }
 
     // Update is called once per frame
@@ -59,33 +62,22 @@ public class GererPersoMulti : MonoBehaviourPunCallbacks
     }
     public void toutFR()
     {
-
-
-
         foreach (GameObject obj in FR)
         {
             obj.SetActive(true);
         }
 
-
-
         foreach (GameObject obj in EN)
         {
             obj.SetActive(false);
         }
-
     }
     public void toutEN()
     {
-
-
-
         foreach (GameObject obj in EN)
         {
             obj.SetActive(true);
         }
-
-
 
         foreach (GameObject obj in FR)
         {
