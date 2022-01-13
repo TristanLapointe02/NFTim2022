@@ -45,13 +45,18 @@ public class GererPersoMulti : MonoBehaviourPunCallbacks
         {
             ctrlActive = true;
             quitterPanneau.SetActive(true); // ouvrir menu
-            Cursor.lockState = CursorLockMode.None;
+            if(SceneManager.GetActiveScene().buildIndex != 0){
+                Cursor.lockState = CursorLockMode.None;
+            }
+            
         }
         else if (Input.GetKeyDown(KeyCode.Escape) && ctrlActive == true)
         {
             ctrlActive = false;
-            Cursor.lockState = CursorLockMode.Locked;
             quitterPanneau.SetActive(false); // fermer menu
+            if(SceneManager.GetActiveScene().buildIndex != 0){
+                Cursor.lockState = CursorLockMode.Locked;
+            }
         }
     }
 
