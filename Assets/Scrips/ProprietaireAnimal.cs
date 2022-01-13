@@ -24,13 +24,13 @@ public class ProprietaireAnimal : MonoBehaviourPunCallbacks
     void Update()
     {
         //Suivre le mouvement du joueur
-        if((joueurAvecAnimal.gameObject.tag != "mouton" || joueurAvecAnimal.gameObject.tag != "cochon"
+        /* if((joueurAvecAnimal.gameObject.tag != "mouton" || joueurAvecAnimal.gameObject.tag != "cochon"
         || joueurAvecAnimal.gameObject.tag != "cheval" || joueurAvecAnimal.gameObject.tag != "chien"
         || joueurAvecAnimal.gameObject.tag != "lama" || joueurAvecAnimal.gameObject.tag != "vache"
         || joueurAvecAnimal.gameObject.tag != "zebre") && photonView.IsMine)
         {
             gameObject.transform.position = transform.forward * 1.1f + transform.up * 1.25f + joueurAvecAnimal.transform.position;
-        }
+        } */
         
     }
 
@@ -43,7 +43,8 @@ public class ProprietaireAnimal : MonoBehaviourPunCallbacks
             photonView.TransferOwnership(PhotonNetwork.LocalPlayer);
 
             //Garder en m�moire quel joueur/gameobject le drapeau doit suivre
-            /* joueurAvecDrapeau = AfficherStatistiques.joueurLocal; */
+            
+            joueurAvecAnimal = GererPersoMulti.joueurLocal;  
 
         }
     }
