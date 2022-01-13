@@ -11,6 +11,7 @@ TagManager:
   - cheval
   - lama
   - destination
+  - roche
   layers:
   - Default
   - TransparentFX

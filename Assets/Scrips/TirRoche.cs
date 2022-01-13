@@ -13,6 +13,7 @@ public class TirRoche : MonoBehaviourPunCallbacks
     public GameObject personnage;
     public GameObject rocheATiree;
     public GameObject rocheEnCooldown;
+     public GameObject particuleEtourdi;
     public float cooldownRoche;
     bool enCooldowm = false;
     public float vitesseRoche;
@@ -88,8 +89,15 @@ public class TirRoche : MonoBehaviourPunCallbacks
     }
 
     private void OnTriggerEnter(Collider infoCollision) {
-        if(infoCollision.gameObject.tag == "joueur"){
-
+        if(infoCollision.gameObject.tag == "roche"){
+            particuleEtourdi.SetActive(true);
+            DeplacementPersonnage.etourdi = true;
+            Invoke("DesactiverParticule", 3f);
         }
+    }
+
+    void DesactiverParticule(){
+        particuleEtourdi.SetActive(false);
+        DeplacementPersonnage.etourdi = false;
     }
 }

@@ -15,13 +15,13 @@ public class DeplacementPersonnage : MonoBehaviourPunCallbacks
     private float forceDuSaut; 
     private bool auSol; 
     public bool saut; 
-    private bool etourdi;
+    public static bool etourdi;
 
     void Start()
     {
         rigidbodyPerso = GetComponent<Rigidbody>();
 
-        //Activer la caméra localement
+        //Activer la camï¿½ra localement
         if (photonView.IsMine)
         {
             camera3emePersonne.SetActive(true);

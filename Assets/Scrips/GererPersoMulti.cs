@@ -37,9 +37,11 @@ public class GererPersoMulti : MonoBehaviourPunCallbacks
         if(Input.GetKeyDown(KeyCode.Escape) && ctrlActive == false){
             ctrlActive = true;
             quitterPanneau.SetActive(true); // ouvrir menu
+            Cursor.lockState = CursorLockMode.None;
         }
         else if(Input.GetKeyDown(KeyCode.Escape) && ctrlActive == true){
             ctrlActive = false;
+             Cursor.lockState = CursorLockMode.Locked;
            quitterPanneau.SetActive(false); // fermer menu
         }
     }
