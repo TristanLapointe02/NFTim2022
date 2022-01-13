@@ -10,8 +10,10 @@ public class AiPromener : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        MesDestinations = GameObject.FindGameObjectsWithTag("waypoint");
         navAgent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         chercherProchaineCible();
+        
     }
 
     // Update is called once per frame
