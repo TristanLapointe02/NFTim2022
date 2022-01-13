@@ -28,6 +28,9 @@ public class GererPersoMulti : MonoBehaviourPunCallbacks
         {
             joueurLocal = PhotonNetwork.Instantiate("ParentJoseph", positions[positionTableau], Quaternion.identity, 0, null);
         }
+
+        //CHANGER NOM JOUEUR LOCAL
+        joueurLocal.name = PhotonNetwork.LocalPlayer.NickName;
     }
 
     // Update is called once per frame
