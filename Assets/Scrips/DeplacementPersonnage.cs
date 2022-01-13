@@ -156,25 +156,25 @@ public class DeplacementPersonnage : MonoBehaviourPunCallbacks
         }
         if (onTientAnimal == true && Input.GetKeyDown("e") && infoCollision.gameObject.name == "CAGE1")
         {
-            if (PhotonNetwork.LocalPlayer == PhotonNetwork.PlayerList[1])
+            if (PhotonNetwork.LocalPlayer == PhotonNetwork.PlayerList[0])
             {
                 print("etape1");
                 switch (animalPris)
                 {
                     case "vache":
-                        photonView.RPC("AjoutScoreJoueur1", RpcTarget.AllBuffered, 3);
+                        photonView.RPC("AjoutScoreJoueur1", RpcTarget.MasterClient, 3);
                         break;
                     case "mouton":
-                        photonView.RPC("AjoutScoreJoueur1", RpcTarget.AllBuffered, 5);
+                        photonView.RPC("AjoutScoreJoueur1", RpcTarget.MasterClient, 5);
                         break;
                     case "chien":
-                        photonView.RPC("AjoutScoreJoueur1", RpcTarget.AllBuffered, 10);
+                        photonView.RPC("AjoutScoreJoueur1", RpcTarget.MasterClient, 10);
                         break;
                     case "cheval":
-                        photonView.RPC("AjoutScoreJoueur1", RpcTarget.AllBuffered, 15);
+                        photonView.RPC("AjoutScoreJoueur1", RpcTarget.MasterClient, 15);
                         break;
                     case "lama":
-                        photonView.RPC("AjoutScoreJoueur1", RpcTarget.AllBuffered, 20);
+                        photonView.RPC("AjoutScoreJoueur1", RpcTarget.MasterClient, 20);
                         break;
                     default:
                         break;
@@ -188,7 +188,7 @@ public class DeplacementPersonnage : MonoBehaviourPunCallbacks
         }
         if (onTientAnimal == true && Input.GetKeyDown("e") && infoCollision.gameObject.name == "CAGE2")
         {
-            if (PhotonNetwork.LocalPlayer == PhotonNetwork.PlayerList[0])
+            if (PhotonNetwork.LocalPlayer == PhotonNetwork.PlayerList[1])
             {
                 print("etape1");
                 switch (animalPris)
@@ -197,17 +197,17 @@ public class DeplacementPersonnage : MonoBehaviourPunCallbacks
                         photonView.RPC("AjoutScoreJoueur2", RpcTarget.MasterClient, 3);
                         break;
                     case "mouton":
-                        photonView.RPC("AjoutScoreJoueur2", RpcTarget.AllBuffered, 5);
+                        photonView.RPC("AjoutScoreJoueur2", RpcTarget.MasterClient, 5);
                         break;
                     case "chien":
-                        photonView.RPC("AjoutScoreJoueur2", RpcTarget.AllBuffered, 10);
+                        photonView.RPC("AjoutScoreJoueur2", RpcTarget.MasterClient, 10);
                         print("etape2");
                         break;
                     case "cheval":
-                        photonView.RPC("AjoutScoreJoueur2", RpcTarget.AllBuffered, 15);
+                        photonView.RPC("AjoutScoreJoueur2", RpcTarget.MasterClient, 15);
                         break;
                     case "lama":
-                        photonView.RPC("AjoutScoreJoueur2", RpcTarget.AllBuffered, 20);
+                        photonView.RPC("AjoutScoreJoueur2", RpcTarget.MasterClient, 20);
                         break;
                     default:
                         break;
@@ -237,6 +237,7 @@ public class DeplacementPersonnage : MonoBehaviourPunCallbacks
     {
         print("ajout score joueur 1");
         pointage1 += score;
+        score1.text = PhotonNetwork.PlayerList[0].NickName + " " + pointage1.ToString();
     }
 
     [PunRPC]
@@ -244,5 +245,6 @@ public class DeplacementPersonnage : MonoBehaviourPunCallbacks
     {
         print("ajout score joueur 2");
         pointage2 += score;
+        score2.text = PhotonNetwork.PlayerList[1].NickName + " " + pointage2.ToString();
     }
 }
