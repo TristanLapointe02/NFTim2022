@@ -25,6 +25,7 @@ public class DeplacementPersonnage : MonoBehaviourPunCallbacks
     public bool onTientAnimal;
     public GameObject rondVert;
     public GameObject rondMauve;
+    public string animalPris;
 
     void Start()
     {
@@ -141,7 +142,7 @@ public class DeplacementPersonnage : MonoBehaviourPunCallbacks
         }
     }
 
-    void OnTriggerStay(Collider infoCollision)
+    public void OnTriggerStay(Collider infoCollision)
     {
         if ((infoCollision.gameObject.tag == "lama" || infoCollision.gameObject.tag == "cheval" ||
         infoCollision.gameObject.tag == "chien" || infoCollision.gameObject.tag == "mouton" ||
@@ -223,6 +224,16 @@ public class DeplacementPersonnage : MonoBehaviourPunCallbacks
         }
     }
 
+    public void OnTriggerEnter(Collider infoCollisionAnimaux)
+    {
+        //Si c'est un animal...
+        if (infoCollisionAnimaux.gameObject.layer == 6)
+        {
+            print("tag de l'animal" + animalPris);
+            animalPris = infoCollisionAnimaux.gameObject.tag.ToString();
+        }
+    }
+    
     [PunRPC]
     public void AjoutScoreJoueur1(int score)
     {
