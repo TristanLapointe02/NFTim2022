@@ -17842,7 +17842,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1405002274}
         m_TargetAssemblyTypeName: GererPersoMulti, Assembly-CSharp
         m_MethodName: Quitter
         m_Mode: 1

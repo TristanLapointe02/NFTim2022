@@ -5164,6 +5164,10 @@ PrefabInstance:
       propertyPath: camera3emePersonne
       value: 
       objectReference: {fileID: 7061967782642060752}
+    - target: {fileID: 7673289613210279748, guid: 0eedd143fb9232a43b8ca5b77c3b32a4, type: 3}
+      propertyPath: m_Radius
+      value: 0.175
+      objectReference: {fileID: 0}
     - target: {fileID: 7673289613210279754, guid: 0eedd143fb9232a43b8ca5b77c3b32a4, type: 3}
       propertyPath: vitesseRoche
       value: 10

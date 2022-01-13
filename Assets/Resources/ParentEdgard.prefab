@@ -5160,6 +5160,10 @@ PrefabInstance:
       propertyPath: camera3emePersonne
       value: 
       objectReference: {fileID: 7246957683855872348}
+    - target: {fileID: 5849999468634258471, guid: d5cce89627ae4b8429569fd20fa5e532, type: 3}
+      propertyPath: m_Radius
+      value: 0.175
+      objectReference: {fileID: 0}
     - target: {fileID: 6243650413922844989, guid: d5cce89627ae4b8429569fd20fa5e532, type: 3}
       propertyPath: m_RootOrder
       value: 0

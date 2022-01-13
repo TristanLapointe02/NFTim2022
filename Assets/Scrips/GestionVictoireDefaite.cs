@@ -10,6 +10,10 @@ public class GestionVictoireDefaite : MonoBehaviourPunCallbacks
 {
     public TextMeshProUGUI texteFin;
    
+
+    void Start(){
+        Cursor.lockState = CursorLockMode.None;
+    }
     // Update is called once per frame
     void Update()
     {
