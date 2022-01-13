@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using Photon.Realtime;
 using Photon.Pun;
+using UnityEngine.UI;
 
 public class DeplacementPersonnage : MonoBehaviourPunCallbacks
 {
@@ -17,9 +18,15 @@ public class DeplacementPersonnage : MonoBehaviourPunCallbacks
     private bool auSol; 
     public bool saut; 
     public static bool etourdi;
+    public Text score1;
+    public int pointage1;
+    public Text score2;
+    public int pointage2;
 
     void Start()
     {
+        score1 = GameObject.Find("ScoreJoueur1").GetComponent<Text>();
+        score2 = GameObject.Find("ScoreJoueur2").GetComponent<Text>();
         rigidbodyPerso = GetComponent<Rigidbody>();
 
         //Activer la cam�ra localement
@@ -30,7 +37,10 @@ public class DeplacementPersonnage : MonoBehaviourPunCallbacks
     }
 
     void Update()
-    {
+    {   //GameObject.FindGameObjectsWithTag("Player")[0]
+        score1.text = PhotonNetwork.PlayerList[0].NickName;
+        score2.text = PhotonNetwork.PlayerList[1].NickName;
+
         if (photonView.IsMine)
         {
             float hDeplacement = Input.GetAxisRaw("Horizontal");
