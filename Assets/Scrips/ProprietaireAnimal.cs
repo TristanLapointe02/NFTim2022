@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Realtime;
 using Photon.Pun;
+using UnityEngine.SceneManagement;
 
 public class ProprietaireAnimal : MonoBehaviourPunCallbacks
 {
@@ -29,7 +30,7 @@ public class ProprietaireAnimal : MonoBehaviourPunCallbacks
          if((joueurAvecAnimal.gameObject.tag != "mouton" || joueurAvecAnimal.gameObject.tag != "cochon"
         || joueurAvecAnimal.gameObject.tag != "cheval" || joueurAvecAnimal.gameObject.tag != "chien"
         || joueurAvecAnimal.gameObject.tag != "lama" || joueurAvecAnimal.gameObject.tag != "vache"
-        || joueurAvecAnimal.gameObject.tag != "zebre") && photonView.IsMine && tiensAnimal == true && joueurAvecAnimal != null && TimerPartieMultiplayer.partieCommencer == true)
+        || joueurAvecAnimal.gameObject.tag != "zebre") && photonView.IsMine && tiensAnimal == true && joueurAvecAnimal != null && TimerPartieMultiplayer.partieCommencer == true && SceneManager.GetActiveScene().buildIndex == 1)
         {
             gameObject.transform.position =  joueurAvecAnimal.transform.position;
             // La ligne commenté explose la vitesse des autres animaux, faudrait trouver un moyen de target seulement l'animal picked up
