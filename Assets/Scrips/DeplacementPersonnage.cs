@@ -153,10 +153,11 @@ public class DeplacementPersonnage : MonoBehaviourPunCallbacks
             //infoCollision.gameObject.GetComponent<NavMeshAgent>().isStopped = true;
             onTientAnimal = true;
         }
-        else if (photonView.IsMine && onTientAnimal == true && Input.GetKey("e") && infoCollision.gameObject.name == "CAGE1")
+        if (photonView.IsMine && onTientAnimal == true && Input.GetKey("e") && infoCollision.gameObject.name == "CAGE1")
         {
             if(PhotonNetwork.LocalPlayer == PhotonNetwork.PlayerList[0])
             {
+                print("etape1");
                 switch (testPointsAndy.animalPris)
                 {
                     case "vache":
@@ -167,6 +168,7 @@ public class DeplacementPersonnage : MonoBehaviourPunCallbacks
                         break;
                     case "chien":
                         pointage1 += 10;
+                        print("etape2");
                         break;
                     case "cheval":
                         pointage1 += 15;
@@ -181,14 +183,14 @@ public class DeplacementPersonnage : MonoBehaviourPunCallbacks
             }
             onTientAnimal = false;
         }
-        else if (photonView.IsMine && onTientAnimal == true && Input.GetKey("e") && infoCollision.gameObject.name == "CAGE2")
+        if (photonView.IsMine && onTientAnimal == true && Input.GetKey("e") && infoCollision.gameObject.name == "CAGE2")
         {
             if (PhotonNetwork.LocalPlayer == PhotonNetwork.PlayerList[1])
             {
                 switch (testPointsAndy.animalPris)
                 {
                     case "vache":
-                        pointage1 += 3;
+                        pointage2 += 3;
                         break;
                     case "mouton":
                         pointage2 += 5;
