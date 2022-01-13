@@ -42,6 +42,13 @@ MonoBehaviour:
   - AjoutScore
   - AjoutScoreJoueur1
   - AjoutScoreJoueur2
+  - JouerSonCheval
+  - JouerSonChien
+  - JouerSonCochon
+  - JouerSonLama
+  - JouerSonMouton
+  - JouerSonVache
+  - JouerSonZebre
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 0

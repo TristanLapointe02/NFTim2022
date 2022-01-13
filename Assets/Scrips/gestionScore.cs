@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using Photon.Realtime;
 using UnityEngine.UI;
 
 public class gestionScore : MonoBehaviourPunCallbacks
@@ -11,6 +12,7 @@ public class gestionScore : MonoBehaviourPunCallbacks
     public Text score2;
     public static int pointage2 = 0;
     public AudioClip sonScore;
+    public GameObject Instructions;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +28,7 @@ public class gestionScore : MonoBehaviourPunCallbacks
             score1.text = PhotonNetwork.PlayerList[0].NickName + " " + pointage1.ToString();
             score2.text = PhotonNetwork.PlayerList[1].NickName + " " + pointage2.ToString();
         }
+        Instructions.transform.rotation = Camera.main.transform.rotation;
     }    
 
     public void OnTriggerEnter(Collider infoCollision)

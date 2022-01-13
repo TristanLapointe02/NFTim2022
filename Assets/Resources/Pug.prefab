@@ -753,6 +753,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   joueurAvecAnimal: {fileID: 3592221628556933058}
+  sonVache: {fileID: 8300000, guid: 9a3704d21aee6f54d85cb64580fff960, type: 3}
+  sonMouton: {fileID: 8300000, guid: b8ec5b251afade74388a5d0c3d403db8, type: 3}
+  sonChien: {fileID: 8300000, guid: 0eedf1907c2006144a13432b533e7a21, type: 3}
+  sonCheval: {fileID: 8300000, guid: cb364a6fe550e75439758867e2a6b119, type: 3}
+  sonLama: {fileID: 8300000, guid: d8244d0b79d33b643913dce20a22cd16, type: 3}
+  sonZebre: {fileID: 8300000, guid: 93ec532857838e84297f4d7a4db726b5, type: 3}
+  sonCochon: {fileID: 8300000, guid: d654afa0aa30f1f49b1c3f718647609c, type: 3}
 --- !u!1 &3615567138917054929
 GameObject:
   m_ObjectHideFlags: 0
